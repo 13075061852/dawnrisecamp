@@ -20,7 +20,6 @@ type HomePageProps = {
       highlight: string;
       href: string;
       imageUrl: string;
-      price: string;
     }[];
   };
 };

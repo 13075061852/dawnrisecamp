@@ -8,6 +8,7 @@ type TrekkingPolePageProps = {
     subtitle: string;
     primaryCta: string;
     secondaryCta: string;
+    backToProducts: string;
     highlights: string[];
     featureTitle: string;
     featureBody: string;
@@ -25,6 +26,11 @@ export function TrekkingPolePage({ product }: TrekkingPolePageProps) {
       <section className="product-hero">
         <div className="shell product-hero-grid">
           <div className="product-hero-copy">
+            <div>
+              <Link className="text-link product-detail-back" to="/products">
+                ← {product.backToProducts}
+              </Link>
+            </div>
             <span>{product.eyebrow}</span>
             <h1>{product.title}</h1>
             <p>{product.subtitle}</p>

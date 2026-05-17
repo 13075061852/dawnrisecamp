@@ -8,6 +8,11 @@ type ProductsPageProps = {
     cta: string;
     productLinesLabel: string;
     partOfLabel: string;
+    searchPlaceholder: string;
+    noResults: string;
+    genericSubtitle: string;
+    genericPrimaryCta: string;
+    genericBackCta: string;
   };
   products: ProductNode[];
 };

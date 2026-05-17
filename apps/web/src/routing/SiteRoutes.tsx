@@ -1,8 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useParams } from "react-router-dom";
 import { AboutPage } from "../pages/AboutPage";
 import { ContactPage } from "../pages/ContactPage";
 import { HomePage } from "../pages/HomePage";
 import { NewsPage } from "../pages/NewsPage";
+import { NewsDetailPage } from "../pages/NewsDetailPage";
+import { ProductDetailPage } from "../pages/ProductDetailPage";
 import { ProductsPage } from "../pages/ProductsPage";
 import { TrekkingPolePage } from "../pages/TrekkingPolePage";
 import type { Locale, NewsItem, ProductNode } from "../types";
@@ -26,7 +28,6 @@ type SiteCopy = {
       highlight: string;
       href: string;
       imageUrl: string;
-      price: string;
     }[];
   };
   trekkingPole: {
@@ -35,6 +36,7 @@ type SiteCopy = {
     subtitle: string;
     primaryCta: string;
     secondaryCta: string;
+    backToProducts: string;
     highlights: string[];
     featureTitle: string;
     featureBody: string;
@@ -65,6 +67,11 @@ type SiteCopy = {
       title: string;
       body: string;
     }[];
+    galleryTitle: string;
+    gallery: {
+      imageUrl: string;
+      alt: string;
+    }[];
   };
   products: {
     eyebrow: string;
@@ -72,11 +79,17 @@ type SiteCopy = {
     cta: string;
     productLinesLabel: string;
     partOfLabel: string;
+    searchPlaceholder: string;
+    noResults: string;
+    genericSubtitle: string;
+    genericPrimaryCta: string;
+    genericBackCta: string;
   };
   news: {
     eyebrow: string;
     title: string;
     readMore: string;
+    backToNews: string;
   };
   contact: {
     eyebrow: string;
@@ -133,11 +146,47 @@ export function SiteRoutes({
         element={<TrekkingPolePage product={copy.trekkingPole} />}
       />
       <Route
+        path="/products/:slug"
+        element={<GenericProductRoute products={products} labels={copy.products} />}
+      />
+      <Route
         path="/news"
         element={<NewsPage newsCopy={copy.news} locale={locale} news={news} />}
+      />
+      <Route
+        path="/news/:slug"
+        element={
+          <NewsDetailRoute locale={locale} news={news} backLabel={copy.news.backToNews} />
+        }
       />
       <Route path="/contact" element={<ContactPage locale={locale} contact={copy.contact} />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
+}
+
+function NewsDetailRoute({
+  locale,
+  news,
+  backLabel,
+}: {
+  locale: Locale;
+  news: NewsItem[];
+  backLabel: string;
+}) {
+  const { slug } = useParams();
+
+  return <NewsDetailPage locale={locale} news={news} slug={slug} backLabel={backLabel} />;
+}
+
+function GenericProductRoute({
+  products,
+  labels,
+}: {
+  products: ProductNode[];
+  labels: SiteCopy["products"];
+}) {
+  const { slug } = useParams();
+
+  return <ProductDetailPage slug={slug} products={products} labels={labels} />;
 }

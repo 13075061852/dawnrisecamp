@@ -21,6 +21,11 @@ type AboutPageProps = {
       title: string;
       body: string;
     }[];
+    galleryTitle: string;
+    gallery: {
+      imageUrl: string;
+      alt: string;
+    }[];
   };
   onPlayVideo: () => void;
 };

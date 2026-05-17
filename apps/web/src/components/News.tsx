@@ -1,5 +1,6 @@
 import { ArrowIcon } from "../icons";
 import type { Locale, NewsItem } from "../types";
+import { Link } from "react-router-dom";
 
 type NewsProps = {
   eyebrow: string;
@@ -34,10 +35,10 @@ export function News({ eyebrow, title, readMore, locale, items }: NewsProps) {
                 </time>
                 <h3>{item.title}</h3>
                 <p>{item.excerpt}</p>
-                <button type="button" className="text-link">
+                <Link className="text-link" to={`/news/${item.slug}`}>
                   {readMore}
                   <ArrowIcon />
-                </button>
+                </Link>
               </div>
             </article>
           ))}

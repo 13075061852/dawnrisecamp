@@ -7,7 +7,6 @@ type FeaturedProduct = {
   highlight: string;
   href: string;
   imageUrl: string;
-  price: string;
 };
 
 type FeaturedProductsProps = {
@@ -44,7 +43,6 @@ export function FeaturedProducts({
               </figure>
               <div>
                 <h3>{item.name}</h3>
-                <strong>{item.price}</strong>
               </div>
             </Link>
           ))}

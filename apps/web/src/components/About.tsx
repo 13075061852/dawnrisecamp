@@ -20,6 +20,11 @@ type AboutProps = {
     title: string;
     body: string;
   }[];
+  galleryTitle: string;
+  gallery: {
+    imageUrl: string;
+    alt: string;
+  }[];
   onPlay: () => void;
 };
 
@@ -36,6 +41,8 @@ export function About({
   pillars,
   processTitle,
   process,
+  galleryTitle,
+  gallery,
   onPlay,
 }: AboutProps) {
   return (
@@ -78,6 +85,20 @@ export function About({
             <span>{stat.label}</span>
           </div>
         ))}
+      </div>
+
+      <div className="shell about-gallery">
+        <div className="section-copy">
+          <h2>{galleryTitle}</h2>
+        </div>
+
+        <div className="about-gallery-grid">
+          {gallery.map((item) => (
+            <figure key={item.imageUrl}>
+              <img src={item.imageUrl} alt={item.alt} />
+            </figure>
+          ))}
+        </div>
       </div>
 
       <div className="shell about-story-grid">

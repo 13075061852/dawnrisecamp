@@ -28,7 +28,6 @@ export const copy = {
           highlight: "Portable / export-friendly",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "$29.90",
         },
         {
           name: "Camping Wagons",
@@ -36,7 +35,6 @@ export const copy = {
           highlight: "High demand / practical utility",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "$29.90",
         },
         {
           name: "Folding Camping Chairs",
@@ -44,7 +42,6 @@ export const copy = {
           highlight: "Core furniture line",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "$29.90",
         },
         {
           name: "Outdoor Product",
@@ -52,7 +49,6 @@ export const copy = {
           highlight: "Coming soon",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "$29.90",
         },
       ],
     },
@@ -62,6 +58,7 @@ export const copy = {
       subtitle: "A lightweight beginner-friendly trekking pole set built for stable support on everyday hiking routes.",
       primaryCta: "Request Quote",
       secondaryCta: "View Specifications",
+      backToProducts: "Back to Products",
       highlights: [
         "Approx. 259 g each",
         "51–110 cm adjustable length",
@@ -123,6 +120,21 @@ export const copy = {
           body: "Coordinate inspection, packing, documentation, and shipment for export.",
         },
       ],
+      galleryTitle: "Inside the factory",
+      gallery: [
+        {
+          imageUrl: "/images/about/factory-inspection.png",
+          alt: "Factory worker inspecting outdoor fabric",
+        },
+        {
+          imageUrl: "/images/about/factory-sewing.png",
+          alt: "Factory sewing line producing outdoor bags",
+        },
+        {
+          imageUrl: "/images/about/factory-packing.png",
+          alt: "Factory team packing outdoor products for shipment",
+        },
+      ],
     },
     products: {
       eyebrow: "Products",
@@ -130,11 +142,18 @@ export const copy = {
       cta: "Request Catalog",
       productLinesLabel: "product lines available",
       partOfLabel: "Part of",
+      searchPlaceholder: "Search products or categories",
+      noResults: "No matching products found.",
+      genericSubtitle:
+        "A reliable outdoor product line built for buyer programs, retail assortments, and export-ready sourcing.",
+      genericPrimaryCta: "Request Quote",
+      genericBackCta: "Back to Products",
     },
     news: {
       eyebrow: "News",
       title: "Company updates and product progress.",
       readMore: "Read More",
+      backToNews: "Back to news",
     },
     contact: {
       eyebrow: "Contact Us",
@@ -189,7 +208,6 @@ export const copy = {
           highlight: "便携 / 易出口",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "29.90 美元",
         },
         {
           name: "露营拖车",
@@ -197,7 +215,6 @@ export const copy = {
           highlight: "需求高 / 实用性强",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "29.90 美元",
         },
         {
           name: "折叠露营椅",
@@ -205,7 +222,6 @@ export const copy = {
           highlight: "家具主力线",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "29.90 美元",
         },
         {
           name: "户外产品",
@@ -213,7 +229,6 @@ export const copy = {
           highlight: "即将更新",
           href: "/products/trekking-poles",
           imageUrl: "/images/products/trekking-poles-spec.png",
-          price: "29.90 美元",
         },
       ],
     },
@@ -223,6 +238,7 @@ export const copy = {
       subtitle: "面向入门徒步场景的轻量双支装登山杖，兼顾稳定支撑、便携收纳与日常耐用性。",
       primaryCta: "咨询报价",
       secondaryCta: "查看参数",
+      backToProducts: "返回产品中心",
       highlights: [
         "单支约 259 g",
         "51–110 cm 可调长度",
@@ -284,6 +300,21 @@ export const copy = {
           body: "协同验货、包装、单证与出口运输安排。",
         },
       ],
+      galleryTitle: "工厂实景",
+      gallery: [
+        {
+          imageUrl: "/images/about/factory-inspection.png",
+          alt: "工厂人员检查户外面料",
+        },
+        {
+          imageUrl: "/images/about/factory-sewing.png",
+          alt: "工厂缝制户外包袋",
+        },
+        {
+          imageUrl: "/images/about/factory-packing.png",
+          alt: "工厂团队进行出货包装",
+        },
+      ],
     },
     products: {
       eyebrow: "产品",
@@ -291,11 +322,17 @@ export const copy = {
       cta: "索取产品目录",
       productLinesLabel: "个产品系列",
       partOfLabel: "所属分类：",
+      searchPlaceholder: "搜索产品或分类",
+      noResults: "没有找到匹配的产品。",
+      genericSubtitle: "面向采购项目、零售组合与出口交付需求的可靠户外产品系列。",
+      genericPrimaryCta: "咨询报价",
+      genericBackCta: "返回产品中心",
     },
     news: {
       eyebrow: "新闻",
       title: "了解我们的新品与工厂动态。",
       readMore: "查看详情",
+      backToNews: "返回新闻列表",
     },
     contact: {
       eyebrow: "联系我们",
