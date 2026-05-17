@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { VideoModal } from "./components/VideoModal";
+import { Link } from "react-router-dom";
 import { copy } from "./content";
 import { useSiteData } from "./hooks/useSiteData";
 import { ScrollToTop } from "./routing/ScrollToTop";
@@ -18,6 +19,19 @@ export default function App() {
     <>
       <ScrollToTop />
       <Header locale={locale} onLocaleChange={setLocale} labels={t.nav} />
+      <div className="floating-actions">
+        <Link className="floating-contact" to="/contact">
+          {t.nav.contact}
+        </Link>
+        <button
+          className="floating-top"
+          type="button"
+          aria-label={locale === "zh" ? "返回顶部" : "Back to top"}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          ↑
+        </button>
+      </div>
       <SiteRoutes
         locale={locale}
         copy={t}

@@ -6,6 +6,8 @@ type ProductsPageProps = {
     eyebrow: string;
     title: string;
     cta: string;
+    productLinesLabel: string;
+    partOfLabel: string;
   };
   products: ProductNode[];
 };
@@ -17,4 +19,3 @@ export function ProductsPage({ productsCopy, products }: ProductsPageProps) {
     </main>
   );
 }
-

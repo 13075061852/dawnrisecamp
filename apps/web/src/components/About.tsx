@@ -6,12 +6,38 @@ type AboutProps = {
   body: string;
   cta: string;
   features: string[];
+  stats: {
+    value: string;
+    label: string;
+  }[];
+  pillarsTitle: string;
+  pillars: {
+    title: string;
+    body: string;
+  }[];
+  processTitle: string;
+  process: {
+    title: string;
+    body: string;
+  }[];
   onPlay: () => void;
 };
 
 const featureIcons = [CompassIcon, ShieldIcon, GlobeIcon];
 
-export function About({ eyebrow, title, body, cta, features, onPlay }: AboutProps) {
+export function About({
+  eyebrow,
+  title,
+  body,
+  cta,
+  features,
+  stats,
+  pillarsTitle,
+  pillars,
+  processTitle,
+  process,
+  onPlay,
+}: AboutProps) {
   return (
     <section className="section about">
       <div className="shell about-grid">
@@ -43,6 +69,50 @@ export function About({ eyebrow, title, body, cta, features, onPlay }: AboutProp
             })}
           </div>
         </div>
+      </div>
+
+      <div className="shell about-stats">
+        {stats.map((stat) => (
+          <div key={stat.label}>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="shell about-story-grid">
+        <section className="about-panel">
+          <div className="section-copy">
+            <h2>{pillarsTitle}</h2>
+          </div>
+
+          <div className="about-pillar-list">
+            {pillars.map((pillar) => (
+              <article key={pillar.title}>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="about-panel about-process-panel">
+          <div className="section-copy">
+            <h2>{processTitle}</h2>
+          </div>
+
+          <ol className="about-process-list">
+            {process.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
       </div>
     </section>
   );

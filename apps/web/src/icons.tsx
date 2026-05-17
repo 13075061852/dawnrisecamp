@@ -34,6 +34,21 @@ export function ArrowIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function ChevronIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+        d="m9 6 6 6-6 6"
+      />
+    </svg>
+  );
+}
+
 export function CompassIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -79,4 +94,3 @@ export function GlobeIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
-

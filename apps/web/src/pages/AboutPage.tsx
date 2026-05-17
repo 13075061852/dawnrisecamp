@@ -7,6 +7,20 @@ type AboutPageProps = {
     body: string;
     cta: string;
     features: string[];
+    stats: {
+      value: string;
+      label: string;
+    }[];
+    pillarsTitle: string;
+    pillars: {
+      title: string;
+      body: string;
+    }[];
+    processTitle: string;
+    process: {
+      title: string;
+      body: string;
+    }[];
   };
   onPlayVideo: () => void;
 };
@@ -18,4 +32,3 @@ export function AboutPage({ about, onPlayVideo }: AboutPageProps) {
     </main>
   );
 }
-

@@ -7,6 +7,16 @@ type ContactProps = {
   labels: {
     eyebrow: string;
     title: string;
+    body: string;
+    emailLabel: string;
+    phoneLabel: string;
+    phone: string;
+    addressLabel: string;
+    address: string;
+    hoursLabel: string;
+    hours: string;
+    mapTitle: string;
+    mapCta: string;
     name: string;
     email: string;
     company: string;
@@ -44,12 +54,53 @@ export function Contact({ locale, labels }: ContactProps) {
   return (
     <section className="section contact">
       <div className="shell contact-grid">
-        <div className="section-copy">
-          <span>{labels.eyebrow}</span>
-          <h2>{labels.title}</h2>
-          <p>sales@dawnrisecamp.com</p>
+        <div className="contact-intro">
+          <div className="section-copy">
+            <span>{labels.eyebrow}</span>
+            <h2>{labels.title}</h2>
+            <p>{labels.body}</p>
+          </div>
+
+          <div className="contact-details">
+            <div>
+              <span>{labels.emailLabel}</span>
+              <a href="mailto:sales@dawnrisecamp.com">sales@dawnrisecamp.com</a>
+            </div>
+            <div>
+              <span>{labels.phoneLabel}</span>
+              <a href={`tel:${labels.phone.replace(/\s+/g, "")}`}>{labels.phone}</a>
+            </div>
+            <div>
+              <span>{labels.addressLabel}</span>
+              <p>{labels.address}</p>
+            </div>
+            <div>
+              <span>{labels.hoursLabel}</span>
+              <p>{labels.hours}</p>
+            </div>
+          </div>
         </div>
 
+        <div className="contact-map-card">
+          <div className="contact-map-heading">
+            <h3>{labels.mapTitle}</h3>
+            <a
+              href="https://www.openstreetmap.org/?mlat=30.2741&mlon=120.1551#map=13/30.2741/120.1551"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {labels.mapCta}
+            </a>
+          </div>
+          <iframe
+            title={labels.mapTitle}
+            src="https://www.openstreetmap.org/export/embed.html?bbox=120.0330%2C30.2040%2C120.2770%2C30.3440&layer=mapnik&marker=30.2741%2C120.1551"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div className="shell contact-form-shell">
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             {labels.name}

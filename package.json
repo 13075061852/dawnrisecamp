@@ -16,5 +16,16 @@
     "deploy:web": "npm run deploy:confirmed --workspace apps/web",
     "build": "npm run build --workspaces",
     "typecheck": "npm run typecheck --workspaces"
+  },
+  "scriptsDescription": {
+    "dev:web": "启动前端本地开发服务器（apps/web）。",
+    "dev:api": "启动后端 Worker 的本地开发服务器（apps/api）。",
+    "preview:cloud": "启动前端本地预览；当前项目约定下，前端会连接线上 Worker 数据。",
+    "sync:db": "把 apps/api 中的 D1 数据库迁移应用到远程数据库。",
+    "sync:worker": "把 apps/api 的 Worker 代码部署到 Cloudflare。",
+    "sync:backend": "先同步远程数据库，再部署 Worker；相当于依次执行 sync:db 和 sync:worker。",
+    "deploy:web": "部署前端到 Cloudflare Pages；命令名里的 confirmed 表示应在人工确认后再执行。",
+    "build": "对所有 workspace 执行 build，用于统一构建前端和后端。",
+    "typecheck": "对所有 workspace 执行 typecheck，用于统一做 TypeScript 类型检查。"
   }
 }

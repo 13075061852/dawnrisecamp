@@ -6,6 +6,16 @@ type ContactPageProps = {
   contact: {
     eyebrow: string;
     title: string;
+    body: string;
+    emailLabel: string;
+    phoneLabel: string;
+    phone: string;
+    addressLabel: string;
+    address: string;
+    hoursLabel: string;
+    hours: string;
+    mapTitle: string;
+    mapCta: string;
     name: string;
     email: string;
     company: string;
@@ -24,4 +34,3 @@ export function ContactPage({ locale, contact }: ContactPageProps) {
     </main>
   );
 }
-
