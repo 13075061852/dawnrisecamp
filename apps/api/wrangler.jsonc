@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dawnrisecamp-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-17",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "ALLOWED_ORIGINS": "http://127.0.0.1:5173,http://localhost:5173,https://dawnrisecamp-web.pages.dev,https://*.dawnrisecamp-web.pages.dev"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "dawnrisecamp-db",
+      "database_id": "aab5706a-806b-44a2-9ed3-985d5ec6e274",
+      "migrations_dir": "migrations",
+      "remote": true
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA_BUCKET",
+      "bucket_name": "dawnrisecamp-media",
+      "remote": true
+    }
+  ]
+}

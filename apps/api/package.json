@@ -1,0 +1,17 @@
+{
+  "name": "@dawnrisecamp/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "tsc --noEmit",
+    "migrate:remote": "wrangler d1 migrations apply dawnrisecamp-db --remote",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "wrangler": "^4.92.0"
+  }
+}

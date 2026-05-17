@@ -1,0 +1,20 @@
+{
+  "name": "dawnrisecamp",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace apps/web",
+    "dev:api": "npm run dev --workspace apps/api",
+    "preview:cloud": "npm run dev:web",
+    "sync:db": "npm run migrate:remote --workspace apps/api",
+    "sync:worker": "npm run deploy --workspace apps/api",
+    "sync:backend": "npm run sync:db && npm run sync:worker",
+    "deploy:web": "npm run deploy:confirmed --workspace apps/web",
+    "build": "npm run build --workspaces",
+    "typecheck": "npm run typecheck --workspaces"
+  }
+}
