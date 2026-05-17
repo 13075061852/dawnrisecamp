@@ -3,7 +3,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { VideoModal } from "./components/VideoModal";
 import { Link } from "react-router-dom";
-import { copy } from "./content";
+import { copy, productProfiles } from "./content";
 import { useSiteData } from "./hooks/useSiteData";
 import { ScrollToTop } from "./routing/ScrollToTop";
 import { SiteRoutes } from "./routing/SiteRoutes";
@@ -36,6 +36,7 @@ export default function App() {
         locale={locale}
         copy={t}
         products={products}
+        productProfiles={productProfiles[locale]}
         news={news}
         onPlayVideo={() => setVideoOpen(true)}
       />

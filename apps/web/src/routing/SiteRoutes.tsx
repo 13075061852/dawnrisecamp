@@ -7,7 +7,7 @@ import { NewsDetailPage } from "../pages/NewsDetailPage";
 import { ProductDetailPage } from "../pages/ProductDetailPage";
 import { ProductsPage } from "../pages/ProductsPage";
 import { TrekkingPolePage } from "../pages/TrekkingPolePage";
-import type { Locale, NewsItem, ProductNode } from "../types";
+import type { Locale, NewsItem, ProductNode, ProductProfile } from "../types";
 
 type SiteCopy = {
   hero: {
@@ -119,6 +119,7 @@ type SiteRoutesProps = {
   locale: Locale;
   copy: SiteCopy;
   products: ProductNode[];
+  productProfiles: Record<string, ProductProfile>;
   news: NewsItem[];
   onPlayVideo: () => void;
 };
@@ -127,6 +128,7 @@ export function SiteRoutes({
   locale,
   copy,
   products,
+  productProfiles,
   news,
   onPlayVideo,
 }: SiteRoutesProps) {
@@ -139,7 +141,13 @@ export function SiteRoutes({
       <Route path="/about" element={<AboutPage about={copy.about} onPlayVideo={onPlayVideo} />} />
       <Route
         path="/products"
-        element={<ProductsPage productsCopy={copy.products} products={products} />}
+        element={
+          <ProductsPage
+            productsCopy={copy.products}
+            products={products}
+            productProfiles={productProfiles}
+          />
+        }
       />
       <Route
         path="/products/trekking-poles"
@@ -147,7 +155,13 @@ export function SiteRoutes({
       />
       <Route
         path="/products/:slug"
-        element={<GenericProductRoute products={products} labels={copy.products} />}
+        element={
+          <GenericProductRoute
+            products={products}
+            labels={copy.products}
+            productProfiles={productProfiles}
+          />
+        }
       />
       <Route
         path="/news"
@@ -182,11 +196,20 @@ function NewsDetailRoute({
 function GenericProductRoute({
   products,
   labels,
+  productProfiles,
 }: {
   products: ProductNode[];
   labels: SiteCopy["products"];
+  productProfiles: Record<string, ProductProfile>;
 }) {
   const { slug } = useParams();
 
-  return <ProductDetailPage slug={slug} products={products} labels={labels} />;
+  return (
+    <ProductDetailPage
+      slug={slug}
+      products={products}
+      labels={labels}
+      productProfiles={productProfiles}
+    />
+  );
 }

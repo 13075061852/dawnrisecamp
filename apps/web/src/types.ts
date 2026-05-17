@@ -6,6 +6,23 @@ export type ProductNode = {
   children: ProductNode[];
 };
 
+export type ProductProfile = {
+  slug: string;
+  code: string;
+  subtitle: string;
+  highlights: string[];
+  featureTitle: string;
+  featureBody: string;
+  specs: {
+    label: string;
+    value: string;
+  }[];
+  gallery: {
+    lifestyle: string;
+    studio: string;
+  };
+};
+
 export type NewsItem = {
   slug: string;
   publishedAt: string;
@@ -26,4 +43,3 @@ export type InquiryPayload = {
   message: string;
   locale: Locale;
 };
-

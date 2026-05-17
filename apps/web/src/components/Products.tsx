@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { ArrowIcon, ChevronIcon, ChevronLeftIcon } from "../icons";
-import type { ProductNode } from "../types";
+import type { ProductNode, ProductProfile } from "../types";
 import { Link } from "react-router-dom";
 
 type ProductsProps = {
@@ -12,6 +12,7 @@ type ProductsProps = {
   searchPlaceholder: string;
   noResults: string;
   products: ProductNode[];
+  productProfiles: Record<string, ProductProfile>;
 };
 
 export function Products({
@@ -23,6 +24,7 @@ export function Products({
   searchPlaceholder,
   noResults,
   products,
+  productProfiles,
 }: ProductsProps) {
   const firstCategory = products[0];
   const [expandedSlug, setExpandedSlug] = useState<string | null>(firstCategory?.slug ?? null);
@@ -61,6 +63,7 @@ export function Products({
   const categoryProducts = selectedCategory?.children ?? [];
   const selectedProductIndex = categoryProducts.findIndex((child) => child.slug === selectedSlug);
   const hasMultipleProducts = categoryProducts.length > 1;
+  const selectedProductProfile = selectedProduct ? productProfiles[selectedProduct.slug] : undefined;
 
   function handleCategoryClick(category: ProductNode) {
     setExpandedSlug((current) => (current === category.slug ? null : category.slug));
@@ -168,7 +171,14 @@ export function Products({
                   key={`image-${selectedProduct.slug}`}
                   to={`/products/${selectedProduct.slug}`}
                 >
-                  <img src="/images/products.webp" alt="" />
+                  <img
+                    src={
+                      selectedProduct.slug === "trekking-poles"
+                        ? "/images/products/trekking-poles-lifestyle.webp"
+                        : selectedProductProfile?.gallery.lifestyle ?? "/images/products.webp"
+                    }
+                    alt=""
+                  />
                 </Link>
 
                 <div className="product-selection">

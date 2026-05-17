@@ -1,4 +1,4 @@
-import type { Locale, NewsItem, ProductNode } from "./types";
+﻿import type { Locale, NewsItem, ProductNode, ProductProfile } from "./types";
 
 export const copy = {
   en: {
@@ -27,28 +27,28 @@ export const copy = {
           description: "Lightweight support for hiking, trekking, and long-distance outdoor travel.",
           highlight: "Portable / export-friendly",
           href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          imageUrl: "/images/products/trekking-poles-spec.webp",
         },
         {
           name: "Camping Wagons",
           description: "Foldable hauling solutions for campsites, beaches, gardens, and family trips.",
           highlight: "High demand / practical utility",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          href: "/products/camping-wagons",
+          imageUrl: "/images/products/camping-wagons-studio.webp",
         },
         {
           name: "Folding Camping Chairs",
           description: "Comfort-focused seating built for leisure camping, events, and retail programs.",
           highlight: "Core furniture line",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          href: "/products/folding-camping-chairs",
+          imageUrl: "/images/products/folding-camping-chairs-studio.webp",
         },
         {
-          name: "Outdoor Product",
-          description: "Temporary placeholder product.",
-          highlight: "Coming soon",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          name: "Hard Cooler Boxes",
+          description: "Rugged chilled storage for campsites, picnics, and road-trip assortments.",
+          highlight: "Utility anchor",
+          href: "/products/hard-cooler-boxes",
+          imageUrl: "/images/products/hard-cooler-boxes-studio.webp",
         },
       ],
     },
@@ -123,15 +123,15 @@ export const copy = {
       galleryTitle: "Inside the factory",
       gallery: [
         {
-          imageUrl: "/images/about/factory-inspection.png",
+          imageUrl: "/images/about/factory-inspection.webp",
           alt: "Factory worker inspecting outdoor fabric",
         },
         {
-          imageUrl: "/images/about/factory-sewing.png",
+          imageUrl: "/images/about/factory-sewing.webp",
           alt: "Factory sewing line producing outdoor bags",
         },
         {
-          imageUrl: "/images/about/factory-packing.png",
+          imageUrl: "/images/about/factory-packing.webp",
           alt: "Factory team packing outdoor products for shipment",
         },
       ],
@@ -206,29 +206,29 @@ export const copy = {
           name: "登山杖",
           description: "适合徒步、登山与长距离户外出行的轻量支撑装备。",
           highlight: "便携 / 易出口",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          href: "/products/camping-wagons",
+          imageUrl: "/images/products/camping-wagons-studio.webp",
         },
         {
           name: "露营拖车",
           description: "适用于营地、海滩、庭院和家庭出游的折叠运输产品。",
           highlight: "需求高 / 实用性强",
           href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          imageUrl: "/images/products/trekking-poles-spec.webp",
         },
         {
           name: "折叠露营椅",
           description: "面向休闲露营、活动场景和零售渠道的舒适坐具。",
           highlight: "家具主力线",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          href: "/products/folding-camping-chairs",
+          imageUrl: "/images/products/folding-camping-chairs-studio.webp",
         },
         {
-          name: "户外产品",
-          description: "临时占位产品。",
-          highlight: "即将更新",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.png",
+          name: "硬壳保温箱",
+          description: "适用于露营、野餐与自驾组合的耐用储冷产品。",
+          highlight: "实用核心款",
+          href: "/products/hard-cooler-boxes",
+          imageUrl: "/images/products/hard-cooler-boxes-studio.webp",
         },
       ],
     },
@@ -303,15 +303,15 @@ export const copy = {
       galleryTitle: "工厂实景",
       gallery: [
         {
-          imageUrl: "/images/about/factory-inspection.png",
+          imageUrl: "/images/about/factory-inspection.webp",
           alt: "工厂人员检查户外面料",
         },
         {
-          imageUrl: "/images/about/factory-sewing.png",
+          imageUrl: "/images/about/factory-sewing.webp",
           alt: "工厂缝制户外包袋",
         },
         {
-          imageUrl: "/images/about/factory-packing.png",
+          imageUrl: "/images/about/factory-packing.webp",
           alt: "工厂团队进行出货包装",
         },
       ],
@@ -391,6 +391,14 @@ export const fallbackProducts: Record<Locale, ProductNode[]> = {
         { slug: "camping-cots", name: "Camping Cots", children: [] },
       ],
     },
+    {
+      slug: "camp-kitchen-accessories",
+      name: "Camp Kitchen & Accessories",
+      children: [
+        { slug: "folding-camping-tables", name: "Folding Camping Tables", children: [] },
+        { slug: "hard-cooler-boxes", name: "Hard Cooler Boxes", children: [] },
+      ],
+    },
   ],
   zh: [
     {
@@ -420,7 +428,318 @@ export const fallbackProducts: Record<Locale, ProductNode[]> = {
         { slug: "camping-cots", name: "露营行军床", children: [] },
       ],
     },
+    {
+      slug: "camp-kitchen-accessories",
+      name: "营地厨房与配件",
+      children: [
+        { slug: "folding-camping-tables", name: "折叠露营桌", children: [] },
+        { slug: "hard-cooler-boxes", name: "硬壳保温箱", children: [] },
+      ],
+    },
   ],
+};
+
+export const productProfiles: Record<Locale, Record<string, ProductProfile>> = {
+  en: {
+    "camping-wagons": {
+      slug: "camping-wagons",
+      code: "WG-FD-220",
+      subtitle: "A foldable utility wagon built for smoother hauling across campsites, beaches, and family trips.",
+      highlights: ["120 kg load rating", "All-terrain wheels", "Quick-fold frame", "Removable liner"],
+      featureTitle: "More carrying capacity, less effort.",
+      featureBody:
+        "WG-FD-220 balances rugged transport with compact storage, making it a versatile line for campsite logistics and outdoor retail assortments.",
+      specs: [
+        { label: "Frame", value: "Powder-coated steel" },
+        { label: "Fabric", value: "600D polyester" },
+        { label: "Capacity", value: "120 kg" },
+        { label: "Wheel", value: "Wide PU all-terrain wheels" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-wagons-lifestyle.webp",
+        studio: "/images/products/camping-wagons-studio.webp",
+      },
+    },
+    "folding-camping-chairs": {
+      slug: "folding-camping-chairs",
+      code: "CH-LW-018",
+      subtitle: "A refined low chair for relaxed camping, outdoor events, and premium leisure collections.",
+      highlights: ["Walnut-tone armrests", "Compact fold", "Comfort seat angle", "Retail-ready styling"],
+      featureTitle: "Comfort that looks considered.",
+      featureBody:
+        "CH-LW-018 gives a familiar outdoor staple a more polished posture, pairing practical portability with a warmer furniture-like feel.",
+      specs: [
+        { label: "Frame", value: "Steel tube" },
+        { label: "Seat", value: "Canvas fabric" },
+        { label: "Armrest", value: "Wood-look composite" },
+        { label: "Best use", value: "Leisure camping" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/folding-camping-chairs-lifestyle.webp",
+        studio: "/images/products/folding-camping-chairs-studio.webp",
+      },
+    },
+    "inflatable-sleeping-pads": {
+      slug: "inflatable-sleeping-pads",
+      code: "SP-SI-040",
+      subtitle: "A self-inflating sleeping pad designed for better campsite comfort without bulky packing.",
+      highlights: ["Self-inflating core", "Compact carry sack", "Ribbed support surface", "Easy campsite setup"],
+      featureTitle: "A softer night, packed smaller.",
+      featureBody:
+        "SP-SI-040 is tuned for practical comfort, helping buyers offer an accessible sleep upgrade for car camping and light travel programs.",
+      specs: [
+        { label: "Construction", value: "Foam-core self-inflating" },
+        { label: "Surface", value: "Ribbed polyester" },
+        { label: "Valve", value: "Single quick-release valve" },
+        { label: "Best use", value: "Camping sleep systems" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/inflatable-sleeping-pads-lifestyle.webp",
+        studio: "/images/products/inflatable-sleeping-pads-studio.webp",
+      },
+    },
+    "camping-cots": {
+      slug: "camping-cots",
+      code: "CT-AL-090",
+      subtitle: "A compact camping cot that keeps sleep surfaces elevated, stable, and easy to pack.",
+      highlights: ["Elevated sleep deck", "Aluminum support frame", "Fast assembly", "Compact carry size"],
+      featureTitle: "Stable rest above uneven ground.",
+      featureBody:
+        "CT-AL-090 gives campsites a cleaner, more structured sleep setup while staying manageable for storage and transport.",
+      specs: [
+        { label: "Frame", value: "Aluminum alloy" },
+        { label: "Fabric", value: "Oxford polyester" },
+        { label: "Load", value: "150 kg" },
+        { label: "Pack", value: "Carry bag included" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-cots-lifestyle.webp",
+        studio: "/images/products/camping-cots-studio.webp",
+      },
+    },
+    "camping-tarps": {
+      slug: "camping-tarps",
+      code: "TP-SH-300",
+      subtitle: "A versatile tarp shelter for shade, rain coverage, and adaptable campsite layouts.",
+      highlights: ["Large shade area", "Reinforced corners", "Multi-pitch setup", "Weather-ready fabric"],
+      featureTitle: "One shelter, many camp layouts.",
+      featureBody:
+        "TP-SH-300 supports flexible pitching styles, giving outdoor assortments a highly usable shelter product with broad seasonal appeal.",
+      specs: [
+        { label: "Fabric", value: "150D ripstop polyester" },
+        { label: "Coating", value: "PU waterproof coating" },
+        { label: "Corners", value: "Reinforced webbing loops" },
+        { label: "Best use", value: "Shade and rain cover" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-tarps-lifestyle.webp",
+        studio: "/images/products/camping-tarps-studio.webp",
+      },
+    },
+    "car-awnings": {
+      slug: "car-awnings",
+      code: "AW-VE-250",
+      subtitle: "A vehicle-mounted awning for fast roadside shade and simple overland camp setups.",
+      highlights: ["Vehicle mount", "Quick deployment", "Integrated storage sleeve", "Road-trip friendly"],
+      featureTitle: "Shade that travels with the vehicle.",
+      featureBody:
+        "AW-VE-250 extends usable camp space in minutes, making it a strong option for overland and automotive outdoor lines.",
+      specs: [
+        { label: "Mount", value: "Roof rack compatible" },
+        { label: "Canopy", value: "Ripstop polyester" },
+        { label: "Frame", value: "Aluminum support arms" },
+        { label: "Best use", value: "Vehicle camping" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/car-awnings-lifestyle.webp",
+        studio: "/images/products/car-awnings-studio.webp",
+      },
+    },
+    "folding-camping-tables": {
+      slug: "folding-camping-tables",
+      code: "TB-RL-060",
+      subtitle: "A compact roll-top table for camp kitchens, coffee setups, and lightweight outdoor dining.",
+      highlights: ["Roll-top surface", "Fast pack-down", "Stable cross frame", "Warm tabletop finish"],
+      featureTitle: "A small table that earns its footprint.",
+      featureBody:
+        "TB-RL-060 brings structure to campsite routines without adding visual weight, making it easy to pair with chairs and kitchen accessories.",
+      specs: [
+        { label: "Top", value: "Roll-top aluminum slats" },
+        { label: "Frame", value: "Powder-coated steel" },
+        { label: "Assembly", value: "Tool-free" },
+        { label: "Best use", value: "Camp dining and prep" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/folding-camping-tables-lifestyle.webp",
+        studio: "/images/products/folding-camping-tables-studio.webp",
+      },
+    },
+    "hard-cooler-boxes": {
+      slug: "hard-cooler-boxes",
+      code: "CL-HD-035",
+      subtitle: "A rugged hard cooler for chilled storage across camping, picnic, and overland use.",
+      highlights: ["35 L capacity", "Heavy-duty latches", "Textured grip lid", "Long-hold insulation"],
+      featureTitle: "Built to keep essentials colder, longer.",
+      featureBody:
+        "CL-HD-035 adds a durable utility anchor to the assortment, suited to campsites, road trips, and practical outdoor bundles.",
+      specs: [
+        { label: "Capacity", value: "35 L" },
+        { label: "Shell", value: "Rotomolded polyethylene" },
+        { label: "Latch", value: "Rubber T-latch" },
+        { label: "Best use", value: "Food and drink storage" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/hard-cooler-boxes-lifestyle.webp",
+        studio: "/images/products/hard-cooler-boxes-studio.webp",
+      },
+    },
+  },
+  zh: {
+    "camping-wagons": {
+      slug: "camping-wagons",
+      code: "WG-FD-220",
+      subtitle: "适用于营地、海滩与家庭出游的折叠运输拖车，兼顾承载力与便携收纳。",
+      highlights: ["120 kg 承重", "全地形宽轮", "快速折叠", "可拆洗内衬"],
+      featureTitle: "装得更多，拖得更轻松。",
+      featureBody: "WG-FD-220 在大容量运输和紧凑收纳之间取得平衡，适合营地搬运与户外零售组合。",
+      specs: [
+        { label: "车架", value: "喷粉钢管" },
+        { label: "面料", value: "600D 涤纶" },
+        { label: "承重", value: "120 kg" },
+        { label: "车轮", value: "宽幅 PU 全地形轮" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-wagons-lifestyle.webp",
+        studio: "/images/products/camping-wagons-studio.webp",
+      },
+    },
+    "folding-camping-chairs": {
+      slug: "folding-camping-chairs",
+      code: "CH-LW-018",
+      subtitle: "适合休闲露营、户外活动与精品陈列的低座折叠椅。",
+      highlights: ["木纹扶手", "便携折叠", "舒适坐姿", "更适合零售陈列"],
+      featureTitle: "把舒适和质感放在一起。",
+      featureBody: "CH-LW-018 让高频户外单品拥有更克制的家具感，兼顾便携性与更好的视觉完成度。",
+      specs: [
+        { label: "框架", value: "钢管" },
+        { label: "坐面", value: "帆布面料" },
+        { label: "扶手", value: "木纹复合材质" },
+        { label: "适用场景", value: "休闲露营" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/folding-camping-chairs-lifestyle.webp",
+        studio: "/images/products/folding-camping-chairs-studio.webp",
+      },
+    },
+    "inflatable-sleeping-pads": {
+      slug: "inflatable-sleeping-pads",
+      code: "SP-SI-040",
+      subtitle: "兼顾舒适度与收纳体积的自充气睡垫，适合基础露营睡眠系统。",
+      highlights: ["自充气结构", "便携收纳袋", "波纹支撑面", "快速铺设"],
+      featureTitle: "睡得更舒服，带得更轻巧。",
+      featureBody: "SP-SI-040 为自驾露营和轻量出行提供更容易接受的舒适升级。",
+      specs: [
+        { label: "结构", value: "泡棉自充气" },
+        { label: "表面", value: "波纹涤纶" },
+        { label: "气阀", value: "单个快放气阀" },
+        { label: "适用场景", value: "露营睡眠系统" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/inflatable-sleeping-pads-lifestyle.webp",
+        studio: "/images/products/inflatable-sleeping-pads-studio.webp",
+      },
+    },
+    "camping-cots": {
+      slug: "camping-cots",
+      code: "CT-AL-090",
+      subtitle: "让睡眠面离地、更稳定、也更易收纳的便携行军床。",
+      highlights: ["离地睡眠", "铝合金支架", "快速组装", "紧凑收纳"],
+      featureTitle: "在不平整地面上，也能睡得更稳。",
+      featureBody: "CT-AL-090 让营地睡眠更整洁有序，同时保持较好的运输与储存效率。",
+      specs: [
+        { label: "框架", value: "铝合金" },
+        { label: "床面", value: "牛津布" },
+        { label: "承重", value: "150 kg" },
+        { label: "包装", value: "含便携收纳袋" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-cots-lifestyle.webp",
+        studio: "/images/products/camping-cots-studio.webp",
+      },
+    },
+    "camping-tarps": {
+      slug: "camping-tarps",
+      code: "TP-SH-300",
+      subtitle: "适用于遮阳、防雨与多种搭建方式的露营天幕。",
+      highlights: ["大面积遮蔽", "加固角位", "多种搭建", "防雨面料"],
+      featureTitle: "一顶天幕，适配更多营地布局。",
+      featureBody: "TP-SH-300 具备灵活搭建能力，是覆盖季节更广、适配性更强的营地遮蔽产品。",
+      specs: [
+        { label: "面料", value: "150D 防撕裂涤纶" },
+        { label: "涂层", value: "PU 防水涂层" },
+        { label: "角位", value: "加固织带环" },
+        { label: "适用场景", value: "遮阳与防雨" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/camping-tarps-lifestyle.webp",
+        studio: "/images/products/camping-tarps-studio.webp",
+      },
+    },
+    "car-awnings": {
+      slug: "car-awnings",
+      code: "AW-VE-250",
+      subtitle: "为车载露营与自驾场景准备的快速展开式车边帐。",
+      highlights: ["车顶安装", "快速展开", "一体式收纳套", "适合自驾露营"],
+      featureTitle: "跟着车辆一起移动的阴凉。",
+      featureBody: "AW-VE-250 可在短时间内扩展营地可用空间，是车载户外产品线里的高辨识度单品。",
+      specs: [
+        { label: "安装", value: "兼容车顶行李架" },
+        { label: "篷布", value: "防撕裂涤纶" },
+        { label: "支架", value: "铝合金支撑臂" },
+        { label: "适用场景", value: "车载露营" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/car-awnings-lifestyle.webp",
+        studio: "/images/products/car-awnings-studio.webp",
+      },
+    },
+    "folding-camping-tables": {
+      slug: "folding-camping-tables",
+      code: "TB-RL-060",
+      subtitle: "适合营地厨房、咖啡冲煮和轻量餐食场景的便携卷桌。",
+      highlights: ["卷式桌面", "快速收纳", "稳定交叉支架", "温润木色"],
+      featureTitle: "占地不大，却很有用。",
+      featureBody: "TB-RL-060 让营地生活更有秩序，也更容易与椅子、厨房配件形成完整组合。",
+      specs: [
+        { label: "桌面", value: "卷式铝片桌面" },
+        { label: "框架", value: "喷粉钢架" },
+        { label: "组装", value: "免工具" },
+        { label: "适用场景", value: "营地用餐与备餐" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/folding-camping-tables-lifestyle.webp",
+        studio: "/images/products/folding-camping-tables-studio.webp",
+      },
+    },
+    "hard-cooler-boxes": {
+      slug: "hard-cooler-boxes",
+      code: "CL-HD-035",
+      subtitle: "适用于露营、野餐与自驾场景的耐用硬壳保温箱。",
+      highlights: ["35 L 容量", "重型锁扣", "防滑箱盖", "长效保冷"],
+      featureTitle: "让重要补给保持更久的新鲜。",
+      featureBody: "CL-HD-035 为产品线补上了耐用、实用且适合组合销售的营地储冷单品。",
+      specs: [
+        { label: "容量", value: "35 L" },
+        { label: "箱体", value: "滚塑聚乙烯" },
+        { label: "锁扣", value: "橡胶 T 型锁扣" },
+        { label: "适用场景", value: "食物与饮品保冷" },
+      ],
+      gallery: {
+        lifestyle: "/images/products/hard-cooler-boxes-lifestyle.webp",
+        studio: "/images/products/hard-cooler-boxes-studio.webp",
+      },
+    },
+  },
 };
 
 export const fallbackNews: Record<Locale, NewsItem[]> = {

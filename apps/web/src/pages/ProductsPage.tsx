@@ -1,5 +1,5 @@
 import { Products } from "../components/Products";
-import type { ProductNode } from "../types";
+import type { ProductNode, ProductProfile } from "../types";
 
 type ProductsPageProps = {
   productsCopy: {
@@ -15,12 +15,13 @@ type ProductsPageProps = {
     genericBackCta: string;
   };
   products: ProductNode[];
+  productProfiles: Record<string, ProductProfile>;
 };
 
-export function ProductsPage({ productsCopy, products }: ProductsPageProps) {
+export function ProductsPage({ productsCopy, products, productProfiles }: ProductsPageProps) {
   return (
     <main className="page-shell">
-      <Products {...productsCopy} products={products} />
+      <Products {...productsCopy} products={products} productProfiles={productProfiles} />
     </main>
   );
 }
