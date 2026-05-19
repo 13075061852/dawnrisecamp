@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { AboutPage } from "../pages/AboutPage";
 import { ContactPage } from "../pages/ContactPage";
 import { HomePage } from "../pages/HomePage";
@@ -132,50 +132,54 @@ export function SiteRoutes({
   news,
   onPlayVideo,
 }: SiteRoutesProps) {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={<HomePage hero={copy.hero} featuredProducts={copy.featuredProducts} />}
-      />
-      <Route path="/about" element={<AboutPage about={copy.about} onPlayVideo={onPlayVideo} />} />
-      <Route
-        path="/products"
-        element={
-          <ProductsPage
-            productsCopy={copy.products}
-            products={products}
-            productProfiles={productProfiles}
-          />
-        }
-      />
-      <Route
-        path="/products/trekking-poles"
-        element={<TrekkingPolePage product={copy.trekkingPole} />}
-      />
-      <Route
-        path="/products/:slug"
-        element={
-          <GenericProductRoute
-            products={products}
-            labels={copy.products}
-            productProfiles={productProfiles}
-          />
-        }
-      />
-      <Route
-        path="/news"
-        element={<NewsPage newsCopy={copy.news} locale={locale} news={news} />}
-      />
-      <Route
-        path="/news/:slug"
-        element={
-          <NewsDetailRoute locale={locale} news={news} backLabel={copy.news.backToNews} />
-        }
-      />
-      <Route path="/contact" element={<ContactPage locale={locale} contact={copy.contact} />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <div key={location.pathname} className="route-transition">
+      <Routes location={location}>
+        <Route
+          path="/"
+          element={<HomePage hero={copy.hero} featuredProducts={copy.featuredProducts} />}
+        />
+        <Route path="/about" element={<AboutPage about={copy.about} onPlayVideo={onPlayVideo} />} />
+        <Route
+          path="/products"
+          element={
+            <ProductsPage
+              productsCopy={copy.products}
+              products={products}
+              productProfiles={productProfiles}
+            />
+          }
+        />
+        <Route
+          path="/products/trekking-poles"
+          element={<TrekkingPolePage product={copy.trekkingPole} />}
+        />
+        <Route
+          path="/products/:slug"
+          element={
+            <GenericProductRoute
+              products={products}
+              labels={copy.products}
+              productProfiles={productProfiles}
+            />
+          }
+        />
+        <Route
+          path="/news"
+          element={<NewsPage newsCopy={copy.news} locale={locale} news={news} />}
+        />
+        <Route
+          path="/news/:slug"
+          element={
+            <NewsDetailRoute locale={locale} news={news} backLabel={copy.news.backToNews} />
+          }
+        />
+        <Route path="/contact" element={<ContactPage locale={locale} contact={copy.contact} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
   );
 }
 

@@ -123,15 +123,15 @@ export const copy = {
       galleryTitle: "Inside the factory",
       gallery: [
         {
-          imageUrl: "/images/about/factory-inspection.webp",
+          imageUrl: "/images/about/factory-inspection.png",
           alt: "Factory worker inspecting outdoor fabric",
         },
         {
-          imageUrl: "/images/about/factory-sewing.webp",
+          imageUrl: "/images/about/factory-sewing.png",
           alt: "Factory sewing line producing outdoor bags",
         },
         {
-          imageUrl: "/images/about/factory-packing.webp",
+          imageUrl: "/images/about/factory-packing.png",
           alt: "Factory team packing outdoor products for shipment",
         },
       ],
@@ -303,15 +303,15 @@ export const copy = {
       galleryTitle: "工厂实景",
       gallery: [
         {
-          imageUrl: "/images/about/factory-inspection.webp",
+          imageUrl: "/images/about/factory-inspection.png",
           alt: "工厂人员检查户外面料",
         },
         {
-          imageUrl: "/images/about/factory-sewing.webp",
+          imageUrl: "/images/about/factory-sewing.png",
           alt: "工厂缝制户外包袋",
         },
         {
-          imageUrl: "/images/about/factory-packing.webp",
+          imageUrl: "/images/about/factory-packing.png",
           alt: "工厂团队进行出货包装",
         },
       ],
