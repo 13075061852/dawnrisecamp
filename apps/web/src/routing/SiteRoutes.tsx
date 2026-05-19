@@ -30,6 +30,21 @@ type SiteCopy = {
       imageUrl: string;
     }[];
   };
+  homeSourcing: {
+    title: string;
+    body: string;
+    cta: string;
+    steps: {
+      title: string;
+      body: string;
+      label: string;
+    }[];
+    gallery: {
+      imageUrl: string;
+      alt: string;
+      caption: string;
+    }[];
+  };
   trekkingPole: {
     eyebrow: string;
     title: string;
@@ -139,7 +154,13 @@ export function SiteRoutes({
       <Routes location={location}>
         <Route
           path="/"
-          element={<HomePage hero={copy.hero} featuredProducts={copy.featuredProducts} />}
+          element={
+            <HomePage
+              hero={copy.hero}
+              featuredProducts={copy.featuredProducts}
+              homeSourcing={copy.homeSourcing}
+            />
+          }
         />
         <Route path="/about" element={<AboutPage about={copy.about} onPlayVideo={onPlayVideo} />} />
         <Route

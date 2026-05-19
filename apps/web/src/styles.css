@@ -413,7 +413,7 @@ textarea {
 
 .featured-product-tile div {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   justify-items: center;
   text-align: center;
 }
@@ -426,8 +426,134 @@ textarea {
 }
 
 .featured-product-tile strong {
-  font-size: 1.02rem;
+  color: var(--accent);
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featured-product-tile p {
+  max-width: 250px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.home-sourcing {
+  padding-top: 76px;
+}
+
+.home-sourcing-shell {
+  display: grid;
+  gap: 42px;
+}
+
+.home-sourcing-header {
+  display: block;
+}
+
+.home-sourcing-header .section-copy h2 {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.home-delivery-chain {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-delivery-chain li {
+  min-height: 230px;
+  padding: 30px 32px 34px;
+}
+
+.home-delivery-chain li + li {
+  border-left: 1px solid var(--line);
+}
+
+.home-delivery-chain span {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.home-delivery-chain small {
+  display: block;
+  margin-top: 22px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-delivery-chain h3 {
+  margin: 0;
+  margin-top: 12px;
+  font-family: "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-weight: 500;
+}
+
+.home-delivery-chain p {
+  max-width: 360px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.home-sourcing-cta {
+  justify-self: center;
+  width: fit-content;
+}
+
+.home-delivery-gallery {
+  display: grid;
+  grid-template-columns: 1.15fr 0.92fr 0.92fr;
+  gap: 18px;
+}
+
+.home-delivery-gallery figure {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.home-delivery-gallery figure:first-child {
+  aspect-ratio: 5 / 3;
+}
+
+.home-delivery-gallery img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-delivery-gallery figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  color: white;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.54);
 }
 
 .route-transition {
@@ -560,8 +686,7 @@ textarea {
 }
 
 .product-lifestyle {
-  min-height: 440px;
-  max-height: 560px;
+  aspect-ratio: 1.18;
 }
 
 .product-story {
@@ -1504,6 +1629,24 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .home-sourcing-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-delivery-chain {
+    grid-template-columns: 1fr;
+  }
+
+  .home-delivery-chain li {
+    min-height: 0;
+  }
+
+  .home-delivery-chain li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
   .product-lifestyle {
     min-height: auto;
     aspect-ratio: 4 / 5;
@@ -1606,7 +1749,7 @@ textarea {
   }
 
   .hero h1 {
-    max-width: 11ch;
+    max-width: 13ch;
     font-size: 2.34rem;
     text-shadow: 0 2px 22px rgba(0, 0, 0, 0.36);
   }
@@ -1671,6 +1814,27 @@ textarea {
 
   .featured-product-tile {
     padding: 14px;
+  }
+
+  .home-sourcing {
+    padding-top: 56px;
+  }
+
+  .home-sourcing-shell {
+    gap: 32px;
+  }
+
+  .home-sourcing-cta {
+    width: 100%;
+  }
+
+  .home-delivery-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .home-delivery-gallery figure,
+  .home-delivery-gallery figure:first-child {
+    aspect-ratio: 4 / 3;
   }
 
   .product-highlight-row {
@@ -1865,7 +2029,8 @@ textarea {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    max-width: 14ch;
+    font-size: 1.86rem;
     line-height: 0.98;
   }
 
@@ -1889,6 +2054,10 @@ textarea {
   .contact-intro,
   .contact-form {
     padding: 22px;
+  }
+
+  .home-delivery-chain li {
+    padding: 24px 0 26px;
   }
 
   .play-button {

@@ -1,5 +1,6 @@
 import { FeaturedProducts } from "../components/FeaturedProducts";
 import { Hero } from "../components/Hero";
+import { HomeSourcing } from "../components/HomeSourcing";
 
 type HomePageProps = {
   hero: {
@@ -22,13 +23,29 @@ type HomePageProps = {
       imageUrl: string;
     }[];
   };
+  homeSourcing: {
+    title: string;
+    body: string;
+    cta: string;
+    steps: {
+      title: string;
+      body: string;
+      label: string;
+    }[];
+    gallery: {
+      imageUrl: string;
+      alt: string;
+      caption: string;
+    }[];
+  };
 };
 
-export function HomePage({ hero, featuredProducts }: HomePageProps) {
+export function HomePage({ hero, featuredProducts, homeSourcing }: HomePageProps) {
   return (
     <main>
       <Hero {...hero} />
       <FeaturedProducts {...featuredProducts} />
+      <HomeSourcing {...homeSourcing} />
     </main>
   );
 }

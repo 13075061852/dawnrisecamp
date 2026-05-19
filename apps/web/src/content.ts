@@ -10,15 +10,15 @@ export const copy = {
       contact: "Contact Us",
     },
     hero: {
-      title: "Outdoor gear built for the road ahead.",
-      body: "From trekking poles to camp furniture, we help global buyers source dependable outdoor products with confidence.",
-      primaryCta: "Explore Products",
-      secondaryCta: "Contact Us",
-      points: ["Outdoor essentials", "Stable supply", "OEM / ODM support"],
+      title: "OEM / ODM outdoor gear supplier for camping brands.",
+      body: "Source camping furniture, trekking gear, wagons, coolers, and shelter products with sampling, inspection, and export-ready support.",
+      primaryCta: "Explore Categories",
+      secondaryCta: "Send Inquiry",
+      points: ["10+ outdoor categories", "OEM / ODM development", "Inspection before shipment"],
     },
     featuredProducts: {
       eyebrow: "",
-      title: "OUR POPULAR PRODUCTS",
+      title: "Start with high-demand outdoor categories",
       body: "",
       cta: "View All Products",
       items: [
@@ -49,6 +49,45 @@ export const copy = {
           highlight: "Utility anchor",
           href: "/products/hard-cooler-boxes",
           imageUrl: "/images/products/hard-cooler-boxes-studio.webp",
+        },
+      ],
+    },
+    homeSourcing: {
+      title: "A calmer path from sample to shipment.",
+      body: "We keep each order moving through three visible handoffs: aligned samples, controlled production, and shipment-ready checks.",
+      cta: "Discuss Your Order",
+      steps: [
+        {
+          label: "Before production",
+          title: "Sample alignment",
+          body: "Materials, color, packaging, and target cost are confirmed before the order moves forward.",
+        },
+        {
+          label: "During production",
+          title: "Visible checkpoints",
+          body: "Key requirements stay clear while production, packing, and inspection points are coordinated.",
+        },
+        {
+          label: "Before handoff",
+          title: "Export-ready delivery",
+          body: "Final checks, cartons, documents, and shipment details are prepared for buyer review.",
+        },
+      ],
+      gallery: [
+        {
+          imageUrl: "/images/about/factory-inspection.png",
+          alt: "Factory worker inspecting outdoor fabric",
+          caption: "Sample and material checks",
+        },
+        {
+          imageUrl: "/images/about/factory-sewing.png",
+          alt: "Factory sewing line producing outdoor bags",
+          caption: "Controlled production line",
+        },
+        {
+          imageUrl: "/images/about/factory-packing.png",
+          alt: "Factory team packing outdoor products for shipment",
+          caption: "Packing for export handoff",
         },
       ],
     },
@@ -190,15 +229,15 @@ export const copy = {
       contact: "联系我们",
     },
     hero: {
-      title: "为远方打造可靠露营装备。",
-      body: "从登山杖到露营家具，我们帮助全球买家更安心地采购稳定、可靠的户外产品。",
-      primaryCta: "查看产品",
-      secondaryCta: "联系我们",
-      points: ["户外主力产品", "稳定供应", "支持 OEM / ODM"],
+      title: "面向露营品牌的 OEM / ODM 户外装备供应商。",
+      body: "覆盖露营家具、徒步装备、拖车、保温箱和遮蔽类产品，支持打样、验货与出口交付。",
+      primaryCta: "查看产品分类",
+      secondaryCta: "发送询盘",
+      points: ["10+ 户外品类", "OEM / ODM 开发", "出货前验货"],
     },
     featuredProducts: {
       eyebrow: "",
-      title: "热门产品",
+      title: "从高需求户外品类开始",
       body: "",
       cta: "查看全部产品",
       items: [
@@ -206,15 +245,15 @@ export const copy = {
           name: "登山杖",
           description: "适合徒步、登山与长距离户外出行的轻量支撑装备。",
           highlight: "便携 / 易出口",
-          href: "/products/camping-wagons",
-          imageUrl: "/images/products/camping-wagons-studio.webp",
+          href: "/products/trekking-poles",
+          imageUrl: "/images/products/trekking-poles-spec.webp",
         },
         {
           name: "露营拖车",
           description: "适用于营地、海滩、庭院和家庭出游的折叠运输产品。",
           highlight: "需求高 / 实用性强",
-          href: "/products/trekking-poles",
-          imageUrl: "/images/products/trekking-poles-spec.webp",
+          href: "/products/camping-wagons",
+          imageUrl: "/images/products/camping-wagons-studio.webp",
         },
         {
           name: "折叠露营椅",
@@ -229,6 +268,45 @@ export const copy = {
           highlight: "实用核心款",
           href: "/products/hard-cooler-boxes",
           imageUrl: "/images/products/hard-cooler-boxes-studio.webp",
+        },
+      ],
+    },
+    homeSourcing: {
+      title: "从样品到出货，让链路更清晰。",
+      body: "每个订单围绕三个关键交接点推进：样品确认、生产节点、出货检查，让买家知道货物正走到哪一步。",
+      cta: "沟通您的订单",
+      steps: [
+        {
+          label: "量产前",
+          title: "样品确认",
+          body: "材质、颜色、包装和目标成本先对齐，再进入订单执行。",
+        },
+        {
+          label: "生产中",
+          title: "节点可见",
+          body: "围绕生产、包装和验货节点协调，减少过程中的不确定。",
+        },
+        {
+          label: "交接前",
+          title: "出货准备",
+          body: "完成最终检查、装箱信息、单证和运输细节，方便买家复核。",
+        },
+      ],
+      gallery: [
+        {
+          imageUrl: "/images/about/factory-inspection.png",
+          alt: "工厂人员检查户外面料",
+          caption: "样品与材料检查",
+        },
+        {
+          imageUrl: "/images/about/factory-sewing.png",
+          alt: "工厂缝制户外包袋",
+          caption: "生产过程协调",
+        },
+        {
+          imageUrl: "/images/about/factory-packing.png",
+          alt: "工厂团队进行出货包装",
+          caption: "出货包装交接",
         },
       ],
     },

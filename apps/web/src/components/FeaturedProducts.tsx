@@ -42,7 +42,9 @@ export function FeaturedProducts({
                 <img src={item.imageUrl} alt="" />
               </figure>
               <div>
+                <strong>{item.highlight}</strong>
                 <h3>{item.name}</h3>
+                <p>{item.description}</p>
               </div>
             </Link>
           ))}
