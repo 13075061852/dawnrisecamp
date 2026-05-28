@@ -26,6 +26,7 @@ type ProductsProps = {
 
 export function Products({
   title,
+  productLinesLabel,
   searchPlaceholder,
   noResults,
   newsletter,
@@ -34,9 +35,7 @@ export function Products({
 }: ProductsProps) {
   const firstCategory = products[0];
   const [expandedSlug, setExpandedSlug] = useState<string | null>(firstCategory?.slug ?? null);
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(
-    firstCategory ? findFirstMenuItem(firstCategory)?.slug ?? firstCategory.slug : null,
-  );
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(firstCategory?.slug ?? null);
   const [isTaxonomyOpen, setIsTaxonomyOpen] = useState(false);
   const [shouldRenderTaxonomy, setShouldRenderTaxonomy] = useState(false);
   const [query, setQuery] = useState("");
@@ -66,9 +65,22 @@ export function Products({
     };
   });
 
+  useEffect(() => {
+    if (!firstCategory) {
+      setExpandedSlug(null);
+      setSelectedSlug(null);
+      return;
+    }
+
+    if (!findNodeContext(products, selectedSlug)) {
+      setExpandedSlug(firstCategory.slug);
+      setSelectedSlug(firstCategory.slug);
+    }
+  }, [firstCategory, products, selectedSlug]);
+
   function handleCategoryClick(category: ProductNode) {
     setExpandedSlug((current) => (current === category.slug ? null : category.slug));
-    setSelectedSlug(findFirstMenuItem(category)?.slug ?? category.slug);
+    setSelectedSlug(category.slug);
   }
 
   function handleProductClick(slug: string) {
@@ -91,14 +103,14 @@ export function Products({
 
     if (!value.trim()) {
       setExpandedSlug(firstCategory?.slug ?? null);
-      setSelectedSlug(firstCategory ? findFirstMenuItem(firstCategory)?.slug ?? firstCategory.slug : null);
+      setSelectedSlug(firstCategory?.slug ?? null);
       return;
     }
 
     const nextCategory = filterProducts(products, value.trim().toLowerCase())[0];
     if (nextCategory) {
       setExpandedSlug(nextCategory.slug);
-      setSelectedSlug(findFirstMenuItem(nextCategory)?.slug ?? nextCategory.slug);
+      setSelectedSlug(nextCategory.slug);
       setIsTaxonomyOpen(true);
     }
   }
@@ -116,7 +128,7 @@ export function Products({
               aria-expanded={expandedSlug === category.slug}
               onClick={() => handleCategoryClick(category)}
             >
-              <strong>{category.name}</strong>
+              <strong>{formatTaxonomyName(category.name)}</strong>
               {category.children.length > 0 && (
                 <ChevronIcon className={expandedSlug === category.slug ? "expanded" : undefined} />
               )}
@@ -130,7 +142,7 @@ export function Products({
                       type="button"
                       onClick={() => handleProductClick(child.slug)}
                     >
-                      {child.name}
+                      {formatTaxonomyName(child.name)}
                     </button>
                   </li>
                 ))}
@@ -155,33 +167,37 @@ export function Products({
 
   return (
     <section className="section products">
+      <figure className="products-hero-banner">
+        <img src={buildImageUrl("/images/products.webp")} alt="Outdoor camping product lineup" />
+      </figure>
+
       <div className="shell">
-        <div className="products-heading-row">
-          <div className="section-copy products-heading">
-            <button
-              className="products-title-toggle"
-              type="button"
-              aria-controls="product-taxonomy"
-              aria-expanded={isTaxonomyOpen}
-              onClick={() => setIsTaxonomyOpen((current) => !current)}
-            >
-              <span>{title}</span>
-              <span className="taxonomy-toggle-icon" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </span>
-            </button>
-          </div>
-
-        </div>
-
         <div className="products-grid">
           <div className="taxonomy-panel taxonomy-panel-inline">
+            <div className="taxonomy-panel-heading">
+              <strong>{productLinesLabel}</strong>
+            </div>
             {taxonomyContent}
           </div>
 
           <div className="product-catalog">
+            <div className="product-catalog-heading">
+              <button
+                className="products-title-toggle"
+                type="button"
+                aria-controls="product-taxonomy"
+                aria-expanded={isTaxonomyOpen}
+                onClick={() => setIsTaxonomyOpen((current) => !current)}
+              >
+                <span className="taxonomy-toggle-icon" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+                <span>{title}</span>
+              </button>
+            </div>
+
             {selectedCategory && selectedProduct && (
               <>
                 <div className="product-card-grid product-showcase-fade" key={selectedProduct.slug}>
@@ -250,6 +266,21 @@ function filterProducts(products: ProductNode[], normalizedQuery: string): Produ
     .filter((category): category is ProductNode => Boolean(category));
 }
 
+function formatTaxonomyName(name: string) {
+  const ampersandIndex = name.indexOf(" & ");
+
+  if (ampersandIndex === -1) {
+    return name;
+  }
+
+  return (
+    <>
+      <span>{name.slice(0, ampersandIndex + 2)}</span>
+      <span>{name.slice(ampersandIndex + 3)}</span>
+    </>
+  );
+}
+
 function getCatalogImage(product: ProductNode, profile?: ProductProfile) {
   if (product.slug === "trekking-poles") {
     return { src: "/images/products/trekking-poles-spec.webp", label: "Product view" };
@@ -260,10 +291,6 @@ function getCatalogImage(product: ProductNode, profile?: ProductProfile) {
   }
 
   return { src: profile.gallery.images?.[1] ?? profile.gallery.studio, label: profile.code };
-}
-
-function findFirstMenuItem(node: ProductNode): ProductNode | undefined {
-  return node.children[0] ?? node;
 }
 
 function findNodeContext(

@@ -30,6 +30,7 @@ export type NewsItem = {
   title: string;
   excerpt: string;
   imageUrl: string;
+  body?: string[];
 };
 
 export type BootstrapPayload = {

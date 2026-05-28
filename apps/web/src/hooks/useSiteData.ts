@@ -19,8 +19,14 @@ export function useSiteData(locale: Locale) {
     fetchBootstrap(locale)
       .then((payload) => {
         if (!active) return;
-        setProducts(payload.products);
-        setNews(payload.news);
+        setProducts(
+          countLeafProducts(payload.products) >= countLeafProducts(fallbackProducts[locale])
+            ? payload.products
+            : fallbackProducts[locale],
+        );
+        setNews(
+          payload.news.length >= fallbackNews[locale].length ? payload.news : fallbackNews[locale],
+        );
       })
       .catch(() => {
         if (!active) return;
@@ -33,4 +39,14 @@ export function useSiteData(locale: Locale) {
   }, [locale]);
 
   return { products, news, usingFallback };
+}
+
+function countLeafProducts(products: ProductNode[]): number {
+  return products.reduce((total, product) => {
+    if (product.children.length === 0) {
+      return total + 1;
+    }
+
+    return total + countLeafProducts(product.children);
+  }, 0);
 }

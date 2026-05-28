@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { VideoModal } from "./components/VideoModal";
 import { Link } from "react-router-dom";
 import { copy } from "./content";
 import { useSiteData } from "./hooks/useSiteData";
@@ -12,7 +11,6 @@ import type { Locale } from "./types";
 
 export default function App() {
   const [locale, setLocale] = useState<Locale>("en");
-  const [videoOpen, setVideoOpen] = useState(false);
   const t = copy[locale];
   const { products, news } = useSiteData(locale);
 
@@ -39,14 +37,8 @@ export default function App() {
         products={products}
         productProfiles={productProfiles[locale]}
         news={news}
-        onPlayVideo={() => setVideoOpen(true)}
       />
-      <Footer promise={t.footer.promise} />
-      <VideoModal
-        open={videoOpen}
-        onClose={() => setVideoOpen(false)}
-        errorMessage={t.about.videoError}
-      />
+      <Footer locale={locale} promise={t.footer.promise} nav={t.nav} contact={t.contact} products={products} />
     </div>
   );
 }

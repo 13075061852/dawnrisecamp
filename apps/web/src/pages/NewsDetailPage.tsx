@@ -42,7 +42,9 @@ export function NewsDetailPage({ locale, news, slug, backLabel }: NewsDetailPage
         </figure>
 
         <div className="news-detail-body">
-          <p>{article.excerpt}</p>
+          {(article.body?.length ? article.body : [article.excerpt]).map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
       </article>
     </main>

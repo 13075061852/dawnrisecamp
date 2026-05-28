@@ -6,12 +6,13 @@ export const copy = {
       home: "Home",
       about: "About Us",
       products: "Products",
-      news: "News",
+      quality: "Quality Assurance",
+      news: "Industry Insights",
       contact: "Contact Us",
     },
     hero: {
       title: "OEM / ODM outdoor gear supplier for camping brands.",
-      body: "Source camping furniture, trekking gear, wagons, coolers, and shelter products with sampling, inspection, and export-ready support.",
+      body: "We provide quality-checked camping and outdoor gear with flexible OEM/ODM solutions, strict quality control, and reliable supply support for global camping brands, wholesalers, and retailers.",
       primaryCta: "Explore Categories",
       secondaryCta: "Send Inquiry",
       points: ["10+ outdoor categories", "OEM / ODM development", "Inspection before shipment"],
@@ -82,7 +83,7 @@ export const copy = {
     },
     homeSourcing: {
       title: "A calmer path from sample to shipment.",
-      body: "We keep each order moving through three visible handoffs: aligned samples, controlled production, and shipment-ready checks.",
+      body: "We provide quality-checked camping and outdoor gear with flexible OEM/ODM solutions, strict quality control, and reliable supply support for global camping brands, wholesalers, and retailers.",
       cta: "Discuss Your Order",
       steps: [
         {
@@ -205,6 +206,26 @@ export const copy = {
       cta: "Watch Company Video",
       videoError: "Company video will appear here after the R2 asset is uploaded.",
       features: ["OEM / ODM Support", "Quality Inspection", "Global Shipping"],
+      introSections: [
+        {
+          title: "Company Introduction",
+          body: "DawnRiseCamp is a professional outdoor products brand dedicated to reliable camping, hiking, and adventure gear for global customers.\nWith years of overseas supply experience, strict quality control, and secondary inspection before shipment, we provide dependable outdoor products and flexible OEM/ODM solutions for wholesalers, distributors, retailers, and e-commerce sellers worldwide.",
+          imageUrl: "/images/about/company-introduction.png",
+          imageAlt: "Camping and outdoor gear samples prepared for inspection and export",
+        },
+        {
+          title: "Brand Mission & Service Philosophy",
+          body: "Our mission is to provide practical, durable, and reliable outdoor products for global customers. We focus on real outdoor use, stable quality, responsive service, and long-term cooperation with our business partners.",
+          imageUrl: "/images/about/brand-mission.png",
+          imageAlt: "Outdoor service planning desk with camping gear and mountain campsite view",
+        },
+        {
+          title: "OEM / ODM Service",
+          body: "We support OEM and ODM services, including logo customization, packaging design, color options, material selection, size adjustment, and product combination solutions. Whether you are a wholesaler, distributor, retailer, or e-commerce seller, we can help you build customized outdoor product solutions for your market.",
+          imageUrl: "/images/about/oem-odm-service.png",
+          imageAlt: "Outdoor product development workbench with materials, packaging, and color swatches",
+        },
+      ],
       supplierTitle: "Cross-border supplier",
       supplierBody:
         "Specialized in Amazon, Walmart, Taobao, Tmall, Douyin, Pinduoduo, Xiaohongshu and other domestic and international e-commerce platforms, as well as offline physical stores and trade channels.",
@@ -296,11 +317,88 @@ export const copy = {
         },
       ],
     },
+    quality: {
+      eyebrow: "Quality Assurance",
+      title: "Strictly Checked. Ready for Adventure.",
+      subtitle:
+        "Every product is inspected again after production and approved for shipment only when it meets DawnRiseCamp brand standards.",
+      processTitle: "Quality Control Process",
+      reportsTitle: "Secondary Inspection Reports",
+      qualificationsTitle: "Company Qualifications",
+      process: [
+        {
+          title: "Material Review",
+          body: "Check fabrics, frames, hardware, coatings, and core components against the confirmed order requirements.",
+        },
+        {
+          title: "Production Check",
+          body: "Monitor workmanship, assembly details, sizing, and packing consistency during the production stage.",
+        },
+        {
+          title: "Secondary Inspection",
+          body: "Inspect finished goods again after production before the batch is approved for shipment.",
+        },
+        {
+          title: "Report Record",
+          body: "Organize inspection notes, photos, and issue records so buyers can review the shipment status clearly.",
+        },
+        {
+          title: "Shipment Approval",
+          body: "Release goods only when the product, packaging, and order details meet DawnRiseCamp standards.",
+        },
+      ],
+      reports: [
+        {
+          label: "Material",
+          title: "Material and fabric checks",
+          body: "Fabric, coating, color fastness, and key material checks are arranged by product category.",
+          imageUrl: "/images/about/reports/material-fabric-checks.png",
+          imageAlt: "Abstract material and fabric testing report thumbnail",
+        },
+        {
+          label: "Safety",
+          title: "Structure and load testing",
+          body: "Load, stability, assembly, and repeated-use checks support camping furniture and gear programs.",
+          imageUrl: "/images/about/reports/structure-load-testing.png",
+          imageAlt: "Abstract structure and load testing report thumbnail",
+        },
+        {
+          label: "Market",
+          title: "Market compliance support",
+          body: "Reports can be aligned with the destination market and platform entry requirements before shipment.",
+          imageUrl: "/images/about/reports/market-compliance-support.png",
+          imageAlt: "Abstract market compliance report thumbnail",
+        },
+      ],
+      qualifications: [
+        {
+          title: "Business license",
+          body: "Core registration information and operating scope prepared for partner due diligence.",
+          imageUrl: "/images/about/qualifications/business-license.png",
+          imageAlt: "Abstract business license document thumbnail",
+          badge: "Verified",
+        },
+        {
+          title: "Export records",
+          body: "Export-ready documentation support for customs, shipping, and overseas buyer review.",
+          imageUrl: "/images/about/qualifications/export-records.png",
+          imageAlt: "Abstract export records document thumbnail",
+          badge: "Verified",
+        },
+        {
+          title: "Factory coordination",
+          body: "Supplier and production information can be matched to the product line and order requirements.",
+          imageUrl: "/images/about/qualifications/factory-coordination.png",
+          imageAlt: "Abstract factory coordination file thumbnail",
+          badge: "Verified",
+        },
+      ],
+    },
     products: {
       eyebrow: "Products",
       title: "Product Categories",
       cta: "Request Catalog",
-      productLinesLabel: "product lines available",
+      productLinesLabel: "Product categories",
       partOfLabel: "Part of",
       searchPlaceholder: "Search products or categories",
       noResults: "No matching products found.",
@@ -310,10 +408,10 @@ export const copy = {
       genericBackCta: "Back to Products",
     },
     news: {
-      eyebrow: "News",
-      title: "Company updates and product progress.",
+      eyebrow: "Industry Insights",
+      title: "Outdoor product insights and sourcing notes.",
       readMore: "Read More",
-      backToNews: "Back to news",
+      backToNews: "Back to insights",
     },
     contact: {
       eyebrow: "Contact Us",
@@ -346,7 +444,8 @@ export const copy = {
       home: "首页",
       about: "关于我们",
       products: "产品",
-      news: "新闻",
+      quality: "品质保障",
+      news: "行业洞察",
       contact: "联系我们",
     },
     hero: {
@@ -422,7 +521,7 @@ export const copy = {
     },
     homeSourcing: {
       title: "从样品到出货，让链路更清晰。",
-      body: "每个订单围绕三个关键交接点推进：样品确认、生产节点、出货检查，让买家知道货物正走到哪一步。",
+      body: "我们为全球露营品牌、批发商和零售商提供经过品质复检的露营与户外装备，支持灵活 OEM / ODM 定制、严格质量控制和稳定供货服务。",
       cta: "沟通您的订单",
       steps: [
         {
@@ -545,6 +644,26 @@ export const copy = {
       cta: "观看企业视频",
       videoError: "将企业视频上传到 R2 后，会在这里自动显示。",
       features: ["OEM / ODM 支持", "品质检验", "全球发运"],
+      introSections: [
+        {
+          title: "公司介绍",
+          body: "DawnRiseCamp 是一家专业户外产品品牌，致力于为全球客户提供可靠的露营、徒步和户外探险装备。凭借多年海外供货经验、严格质量控制和出货前二次检验，我们为全球批发商、经销商、零售商和电商卖家提供稳定的户外产品与灵活的 OEM / ODM 解决方案。",
+          imageUrl: "/images/about/company-introduction.png",
+          imageAlt: "准备检验和出口的露营户外装备样品",
+        },
+        {
+          title: "品牌目标和服务理念",
+          body: "我们的使命是为全球客户提供实用、耐用、可靠的户外产品。我们重视真实户外使用场景、稳定品质、快速响应服务，以及与商业伙伴建立长期合作关系。",
+          imageUrl: "/images/about/brand-mission.png",
+          imageAlt: "摆放露营装备和服务计划资料的户外工作台",
+        },
+        {
+          title: "OEM / ODM 定制服务",
+          body: "我们支持 OEM 与 ODM 服务，包括 logo 定制、包装设计、颜色选择、材料选择、尺寸调整和产品组合方案。无论您是批发商、经销商、零售商还是电商卖家，我们都可以协助您为目标市场建立定制化户外产品方案。",
+          imageUrl: "/images/about/oem-odm-service.png",
+          imageAlt: "包含材料、包装和色卡的户外产品开发工作台",
+        },
+      ],
       supplierTitle: "跨境与国内电商供应商渠道",
       supplierBody:
         "专注服务 Amazon、Walmart、Taobao、Tmall、Douyin、Pinduoduo、Xiaohongshu 等国内外电商平台，同时覆盖线下实体店与贸易渠道。",
@@ -634,6 +753,83 @@ export const copy = {
         },
       ],
     },
+    quality: {
+      eyebrow: "品质保障",
+      title: "严格复检，安心出发。",
+      subtitle:
+        "每件产品在生产完成后都会再次检验，只有符合 DawnRiseCamp 品牌标准后才会批准出货。",
+      processTitle: "质量控制流程",
+      reportsTitle: "二次检验报告",
+      qualificationsTitle: "公司资质",
+      process: [
+        {
+          title: "材料复核",
+          body: "根据已确认订单要求，检查面料、框架、五金、涂层和核心部件。",
+        },
+        {
+          title: "生产检查",
+          body: "在生产阶段跟进工艺、组装细节、尺寸和包装一致性。",
+        },
+        {
+          title: "二次检验",
+          body: "生产完成后再次检查成品，确认批次达到出货要求。",
+        },
+        {
+          title: "报告记录",
+          body: "整理检验备注、照片和问题记录，方便买家清晰复核出货状态。",
+        },
+        {
+          title: "出货批准",
+          body: "只有产品、包装和订单细节均符合 DawnRiseCamp 标准后，才安排放行出货。",
+        },
+      ],
+      reports: [
+        {
+          label: "材料",
+          title: "材料与面料检测",
+          body: "针对面料、涂层、色牢度等关键材料项目，按产品类别安排检测。",
+          imageUrl: "/images/about/reports/material-fabric-checks.png",
+          imageAlt: "材料与面料检测报告缩略图",
+        },
+        {
+          label: "安全",
+          title: "结构与承重测试",
+          body: "围绕露营家具和户外装备，支持承重、稳定性、组装和重复使用测试。",
+          imageUrl: "/images/about/reports/structure-load-testing.png",
+          imageAlt: "结构与承重测试报告缩略图",
+        },
+        {
+          label: "市场",
+          title: "目标市场合规支持",
+          body: "出货前可按目标市场和平台准入要求，配合整理检测报告和资料。",
+          imageUrl: "/images/about/reports/market-compliance-support.png",
+          imageAlt: "目标市场合规报告缩略图",
+        },
+      ],
+      qualifications: [
+        {
+          title: "营业执照",
+          body: "提供公司主体、经营范围等基础信息，便于客户进行合作前审核。",
+          imageUrl: "/images/about/qualifications/business-license.png",
+          imageAlt: "营业执照资料缩略图",
+          badge: "已核验",
+        },
+        {
+          title: "出口资料",
+          body: "围绕报关、运输和海外客户复核，配合整理出口交付相关文件。",
+          imageUrl: "/images/about/qualifications/export-records.png",
+          imageAlt: "出口资料缩略图",
+          badge: "已核验",
+        },
+        {
+          title: "供应链信息",
+          body: "根据产品线和订单需求，匹配工厂、生产与供应商协同信息。",
+          imageUrl: "/images/about/qualifications/factory-coordination.png",
+          imageAlt: "供应链协同资料缩略图",
+          badge: "已核验",
+        },
+      ],
+    },
     products: {
       eyebrow: "产品",
       title: "产品分类",
@@ -647,10 +843,10 @@ export const copy = {
       genericBackCta: "返回产品中心",
     },
     news: {
-      eyebrow: "新闻",
-      title: "了解我们的新品与工厂动态。",
+      eyebrow: "行业洞察",
+      title: "户外产品趋势与采购洞察。",
       readMore: "查看详情",
-      backToNews: "返回新闻列表",
+      backToNews: "返回行业洞察",
     },
     contact: {
       eyebrow: "联系我们",
@@ -1091,36 +1287,236 @@ export const productProfiles: Record<Locale, Record<string, ProductProfile>> = {
 export const fallbackNews: Record<Locale, NewsItem[]> = {
   en: [
     {
-      slug: "trade-fair-preview",
+      slug: "camping-furniture-sourcing-2026",
       publishedAt: "2026-05-12",
-      title: "Trade Fair Preview: New Camping Furniture Line",
+      title: "Camping Furniture Sourcing: What Buyers Are Checking in 2026",
       excerpt:
-        "We will showcase our latest camping furniture collection for buyers seeking durable, export-ready outdoor products.",
+        "Retail buyers are looking more closely at foldability, fabric strength, carton efficiency, and secondary inspection records.",
       imageUrl: "/images/news-furniture.webp",
+      body: [
+        "Camping furniture remains a practical anchor category for outdoor retail programs. Buyers are paying attention to how chairs, tables, cots, and wagons perform after repeated folding, packing, and transport.",
+        "For export orders, the most useful checks include frame stability, fabric tension, coating consistency, carton drop resistance, and clear replacement-part handling. These details help reduce after-sales uncertainty once products enter overseas channels.",
+      ],
+    },
+    {
+      slug: "shelter-systems-buyer-checklist-2026",
+      publishedAt: "2026-02-18",
+      title: "A Buyer Checklist for Tents, Tarps, and Shelter Accessories",
+      excerpt:
+        "Shelter programs benefit from early checks on fabric coating, pole strength, stitching, accessories, and setup instructions.",
+      imageUrl: "/images/products.webp",
+      body: [
+        "Tents and shelter systems involve more small details than many buyers expect. Fabric, seams, zippers, poles, guy ropes, stakes, and packaging all affect the final customer experience.",
+        "A clear checklist before bulk production helps align product expectations and makes secondary inspection faster after production is complete.",
+      ],
     },
     {
       slug: "wagon-capacity-update",
-      publishedAt: "2026-04-28",
-      title: "Factory Update: Expanded Wagon Assembly Capacity",
+      publishedAt: "2025-10-09",
+      title: "How Camping Wagons Became a Core Outdoor Utility Product",
       excerpt:
-        "Our wagon production line has been upgraded to support steadier bulk fulfillment and shorter lead times.",
+        "Camping wagons support campsites, beaches, gardens, and family trips, making them a flexible category for many retail channels.",
       imageUrl: "/images/news-wagons.webp",
+      body: [
+        "Camping wagons have moved beyond a single camping use case. Their value comes from practical hauling, easy storage, and broad seasonal demand.",
+        "For sourcing teams, wheel structure, fabric denier, frame coating, folding action, and load testing are key factors to confirm before shipment approval.",
+      ],
+    },
+    {
+      slug: "oem-odm-outdoor-packaging-2025",
+      publishedAt: "2025-04-16",
+      title: "OEM / ODM Packaging Details That Improve Outdoor Product Programs",
+      excerpt:
+        "Logo placement, carton structure, instruction inserts, and bundled accessories can make outdoor product lines easier to sell and support.",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "Packaging is often where product development becomes market-ready. For outdoor gear, packaging must protect the product while keeping retail presentation and shipping efficiency in balance.",
+        "OEM and ODM programs should confirm logo position, color standards, carton markings, accessory lists, and instruction language before mass production.",
+      ],
+    },
+    {
+      slug: "camping-sleep-systems-2024",
+      publishedAt: "2024-09-20",
+      title: "Camping Sleep Systems: Comfort, Pack Size, and Quality Control",
+      excerpt:
+        "Sleeping pads and camping cots need a balance of comfort, portability, material consistency, and reliable load performance.",
+      imageUrl: "/images/products.webp",
+      body: [
+        "Sleep products are judged quickly by end users. Surface comfort, inflation behavior, frame stability, and carry size all influence repeat purchase potential.",
+        "Quality checks should include sample comparison, load review, valve function, fabric surface inspection, and packing confirmation.",
+      ],
+    },
+    {
+      slug: "outdoor-material-selection-2024",
+      publishedAt: "2024-03-14",
+      title: "Material Selection Notes for Outdoor Gear Buyers",
+      excerpt:
+        "Fabric, coating, metal hardware, and plastic components should be selected according to the target use scenario and price band.",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "Outdoor products face abrasion, sun exposure, moisture, and repeated handling. Material selection should start from the real use scenario instead of only a target price.",
+        "When buyers define the expected market position early, suppliers can recommend more practical fabric, frame, coating, and accessory combinations.",
+      ],
+    },
+    {
+      slug: "tarps-canopies-market-2023",
+      publishedAt: "2023-11-06",
+      title: "Why Tarps and Canopies Work Well in Seasonal Outdoor Assortments",
+      excerpt:
+        "Shelter products are easy to combine with tents, chairs, tables, and camp kitchen items for flexible outdoor retail programs.",
+      imageUrl: "/images/products.webp",
+      body: [
+        "Tarps and canopies are useful because they fit many outdoor scenes, including campsites, beaches, gardens, festivals, and vehicle travel.",
+        "For product planning, buyers should compare setup method, packed size, waterproofing, UV resistance, attachment points, and included accessories.",
+      ],
+    },
+    {
+      slug: "secondary-inspection-2023",
+      publishedAt: "2023-05-23",
+      title: "What Secondary Inspection Adds Before Outdoor Gear Shipment",
+      excerpt:
+        "A second inspection after production helps catch workmanship, packing, and order-detail issues before goods leave the factory.",
+      imageUrl: "/images/news-wagons.webp",
+      body: [
+        "Secondary inspection is most useful when it is tied to confirmed order standards. It checks finished goods after production instead of relying only on in-process review.",
+        "For outdoor products, this step can cover appearance, structure, accessory completeness, carton marks, and shipment readiness.",
+      ],
+    },
+    {
+      slug: "trekking-gear-entry-products-2022",
+      publishedAt: "2022-08-17",
+      title: "Entry-Level Trekking Gear for Retail Outdoor Programs",
+      excerpt:
+        "Trekking poles and compact hiking accessories give retailers accessible products for beginner outdoor customers.",
+      imageUrl: "/images/products.webp",
+      body: [
+        "Beginner-friendly trekking products should feel simple, durable, and easy to understand. Clear specifications and stable quality matter more than overly complex feature claims.",
+        "For trekking poles, buyers should review lock structure, handle material, tip quality, section fit, and packed pair presentation.",
+      ],
+    },
+    {
+      slug: "outdoor-retail-assortment-2022",
+      publishedAt: "2022-03-10",
+      title: "Building a Practical Outdoor Retail Assortment",
+      excerpt:
+        "A balanced camping assortment usually combines furniture, shelter, sleep, storage, lighting, and utility products.",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "Outdoor assortments work best when products support each other. Chairs, tables, tents, tarps, cots, wagons, and coolers can be planned as a complete camping story.",
+        "For sourcing, the goal is to combine reliable core products with flexible OEM / ODM options for different markets and channels.",
+      ],
     },
   ],
   zh: [
     {
-      slug: "trade-fair-preview",
+      slug: "camping-furniture-sourcing-2026",
       publishedAt: "2026-05-12",
-      title: "展会预告：全新露营家具系列",
-      excerpt: "我们将展示全新露营家具系列，面向需要稳定出口交付的海外客户。",
+      title: "2026 年露营家具采购关注点",
+      excerpt: "海外买家更关注折叠结构、面料强度、装箱效率和二次检验记录。",
       imageUrl: "/images/news-furniture.webp",
+      body: [
+        "露营家具仍然是户外零售里的核心品类。椅子、桌子、行军床和拖车都需要经得起反复折叠、包装和运输。",
+        "出口订单中，车架稳定性、面料张力、涂层一致性、纸箱抗摔和售后配件方案，都是更值得提前确认的细节。",
+      ],
+    },
+    {
+      slug: "shelter-systems-buyer-checklist-2026",
+      publishedAt: "2026-02-18",
+      title: "帐篷、天幕与遮蔽配件采购检查清单",
+      excerpt: "遮蔽类产品应提前检查面料涂层、杆件强度、车缝、配件和说明书。",
+      imageUrl: "/images/products.webp",
+      body: [
+        "帐篷与遮蔽系统包含的细节很多：面料、接缝、拉链、支架、风绳、地钉和包装都会影响最终用户体验。",
+        "量产前建立清晰检查清单，可以让订单标准更明确，也能让出货前二次检验更高效。",
+      ],
     },
     {
       slug: "wagon-capacity-update",
-      publishedAt: "2026-04-28",
-      title: "工厂动态：露营拖车装配产能提升",
-      excerpt: "拖车生产线已完成升级，可更稳定地支持大货订单与更短交期。",
+      publishedAt: "2025-10-09",
+      title: "露营拖车为什么成为户外实用品类",
+      excerpt: "露营拖车覆盖营地、海滩、庭院和家庭出游，是适配渠道很广的产品。",
       imageUrl: "/images/news-wagons.webp",
+      body: [
+        "露营拖车已经不只是单一露营产品，它的价值在于运输方便、收纳相对简单，并且适合多个季节销售。",
+        "采购时应重点确认轮组结构、面料规格、车架涂层、折叠手感和承重测试。",
+      ],
+    },
+    {
+      slug: "oem-odm-outdoor-packaging-2025",
+      publishedAt: "2025-04-16",
+      title: "户外产品 OEM / ODM 包装细节",
+      excerpt: "Logo、纸箱结构、说明书和配件组合，会直接影响产品销售与售后支持。",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "包装是产品从样品走向市场的重要一步。户外产品包装既要保护产品，也要兼顾零售展示和运输效率。",
+        "OEM / ODM 项目应在量产前确认 Logo 位置、颜色标准、箱唛、配件清单和说明书语言。",
+      ],
+    },
+    {
+      slug: "camping-sleep-systems-2024",
+      publishedAt: "2024-09-20",
+      title: "露营睡眠系统：舒适度、收纳与质检",
+      excerpt: "睡垫和行军床需要平衡舒适、便携、材料一致性和承重表现。",
+      imageUrl: "/images/products.webp",
+      body: [
+        "睡眠类产品很容易被用户直接评价。表面舒适度、充放气体验、支架稳定性和收纳尺寸都会影响复购。",
+        "质量检查应覆盖样品对比、承重复核、气阀功能、面料表面和包装完整性。",
+      ],
+    },
+    {
+      slug: "outdoor-material-selection-2024",
+      publishedAt: "2024-03-14",
+      title: "户外装备材料选择建议",
+      excerpt: "面料、涂层、五金和塑料件，应根据真实使用场景和目标价格带选择。",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "户外产品会面对摩擦、日晒、潮湿和频繁搬运。材料选择应从真实使用场景出发，而不是只看目标价格。",
+        "买家越早定义产品定位，供应商越容易推荐合适的面料、支架、涂层和配件组合。",
+      ],
+    },
+    {
+      slug: "tarps-canopies-market-2023",
+      publishedAt: "2023-11-06",
+      title: "天幕与遮阳棚为什么适合季节性户外组合",
+      excerpt: "遮蔽产品可以和帐篷、椅子、桌子、营地厨房用品形成组合销售。",
+      imageUrl: "/images/products.webp",
+      body: [
+        "天幕和遮阳棚适用于营地、海滩、庭院、活动和车载出行，使用场景非常广。",
+        "规划产品时，应比较搭建方式、收纳尺寸、防水、防晒、挂点数量和随附配件。",
+      ],
+    },
+    {
+      slug: "secondary-inspection-2023",
+      publishedAt: "2023-05-23",
+      title: "户外产品出货前二次检验的价值",
+      excerpt: "生产完成后的二次检验，有助于在出厂前发现工艺、包装和订单细节问题。",
+      imageUrl: "/images/news-wagons.webp",
+      body: [
+        "二次检验需要围绕已确认的订单标准执行。它检查的是生产完成后的成品，而不是只依赖生产过程中的抽查。",
+        "对户外产品来说，这一步可以覆盖外观、结构、配件完整性、箱唛和出货准备。",
+      ],
+    },
+    {
+      slug: "trekking-gear-entry-products-2022",
+      publishedAt: "2022-08-17",
+      title: "适合零售渠道的入门徒步装备",
+      excerpt: "登山杖和轻量徒步配件，适合作为新手户外客户的入门产品。",
+      imageUrl: "/images/products.webp",
+      body: [
+        "入门徒步产品应简单、耐用、容易理解。稳定品质和清晰规格，比复杂卖点更重要。",
+        "以登山杖为例，采购时应检查锁紧结构、手柄材质、杖尖质量、分节配合和成对包装呈现。",
+      ],
+    },
+    {
+      slug: "outdoor-retail-assortment-2022",
+      publishedAt: "2022-03-10",
+      title: "如何建立实用的户外零售产品组合",
+      excerpt: "均衡的露营产品组合通常包括家具、遮蔽、睡眠、收纳、照明和工具类产品。",
+      imageUrl: "/images/news-furniture.webp",
+      body: [
+        "户外产品组合最好能互相支撑。椅子、桌子、帐篷、天幕、行军床、拖车和保温箱可以形成完整露营场景。",
+        "采购时，应把稳定核心品类与灵活 OEM / ODM 方案结合起来，适配不同市场和渠道。",
+      ],
     },
   ],
 };

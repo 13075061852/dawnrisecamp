@@ -27,7 +27,7 @@ type ContactPageProps = {
 
 export function ContactPage({ locale, contact }: ContactPageProps) {
   return (
-    <main className="page-shell">
+    <main className="page-shell contact-page">
       <Contact locale={locale} labels={contact} />
     </main>
   );

@@ -13,9 +13,8 @@ type NewsPageProps = {
 
 export function NewsPage({ newsCopy, locale, news }: NewsPageProps) {
   return (
-    <main className="page-shell">
+    <main className="page-shell news-page">
       <News {...newsCopy} locale={locale} items={news} />
     </main>
   );
 }
-

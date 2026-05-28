@@ -6,6 +6,7 @@ import { NewsPage } from "../pages/NewsPage";
 import { NewsDetailPage } from "../pages/NewsDetailPage";
 import { ProductDetailPage } from "../pages/ProductDetailPage";
 import { ProductsPage } from "../pages/ProductsPage";
+import { QualityAssurancePage } from "../pages/QualityAssurancePage";
 import { TrekkingPolePage } from "../pages/TrekkingPolePage";
 import type { Locale, NewsItem, ProductNode, ProductProfile } from "../types";
 
@@ -85,44 +86,43 @@ type SiteCopy = {
     }[];
   };
   about: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    cta: string;
-    videoError: string;
-    features: string[];
+    introSections: {
+      title: string;
+      body: string;
+      imageUrl: string;
+      imageAlt: string;
+    }[];
     supplierTitle: string;
     supplierBody: string;
     supplierChannels: {
       name: string;
       imageUrl: string;
     }[];
-    qualificationsEyebrow: string;
-    qualificationsTitle: string;
-    qualificationsBody: string;
-    qualifications: {
-      title: string;
-      body: string;
-      imageUrl: string;
-      imageAlt: string;
-      badge: string;
-      updatedLabel: string;
-      availability: string;
-    }[];
-    qualificationsPanel: {
-      title: string;
-      body: string;
-      items: string[];
-    };
-    reportsEyebrow: string;
+  };
+  quality: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    processTitle: string;
     reportsTitle: string;
-    reportsBody: string;
+    qualificationsTitle: string;
+    process: {
+      title: string;
+      body: string;
+    }[];
     reports: {
       title: string;
       body: string;
       label: string;
       imageUrl: string;
       imageAlt: string;
+    }[];
+    qualifications: {
+      title: string;
+      body: string;
+      imageUrl: string;
+      imageAlt: string;
+      badge: string;
     }[];
   };
   products: {
@@ -171,7 +171,6 @@ type SiteRoutesProps = {
   products: ProductNode[];
   productProfiles: Record<string, ProductProfile>;
   news: NewsItem[];
-  onPlayVideo: () => void;
 };
 
 export function SiteRoutes({
@@ -180,7 +179,6 @@ export function SiteRoutes({
   products,
   productProfiles,
   news,
-  onPlayVideo,
 }: SiteRoutesProps) {
   const location = useLocation();
 
@@ -202,12 +200,12 @@ export function SiteRoutes({
         <Route
           path="/about"
           element={
-            <AboutPage
-              about={copy.about}
-              newsletter={copy.newsletter}
-              onPlayVideo={onPlayVideo}
-            />
+            <AboutPage about={copy.about} newsletter={copy.newsletter} />
           }
+        />
+        <Route
+          path="/quality-assurance"
+          element={<QualityAssurancePage quality={copy.quality} newsletter={copy.newsletter} />}
         />
         <Route
           path="/products"

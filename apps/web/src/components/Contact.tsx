@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { submitInquiry } from "../lib/api";
+import { buildImageUrl, submitInquiry } from "../lib/api";
 import type { Locale } from "../types";
 
 type ContactProps = {
@@ -67,6 +67,10 @@ export function Contact({ locale, labels }: ContactProps) {
 
   return (
     <section className="section contact">
+      <figure className="contact-hero-banner">
+        <img src={buildImageUrl("/images/contact-hero.webp")} alt="Outdoor gear customer support desk" />
+      </figure>
+
       <div className="shell contact-shell">
         <div className="contact-lead">
           <h2>{labels.title}</h2>
