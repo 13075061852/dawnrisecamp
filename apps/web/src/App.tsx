@@ -3,8 +3,9 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { VideoModal } from "./components/VideoModal";
 import { Link } from "react-router-dom";
-import { copy, productProfiles } from "./content";
+import { copy } from "./content";
 import { useSiteData } from "./hooks/useSiteData";
+import { productProfiles } from "./productCatalog";
 import { ScrollToTop } from "./routing/ScrollToTop";
 import { SiteRoutes } from "./routing/SiteRoutes";
 import type { Locale } from "./types";
@@ -16,7 +17,7 @@ export default function App() {
   const { products, news } = useSiteData(locale);
 
   return (
-    <>
+    <div className="app-shell">
       <ScrollToTop />
       <Header locale={locale} onLocaleChange={setLocale} labels={t.nav} />
       <div className="floating-actions">
@@ -46,6 +47,6 @@ export default function App() {
         onClose={() => setVideoOpen(false)}
         errorMessage={t.about.videoError}
       />
-    </>
+    </div>
   );
 }

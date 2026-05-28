@@ -20,6 +20,7 @@ export type ProductProfile = {
   gallery: {
     lifestyle: string;
     studio: string;
+    images?: string[];
   };
 };
 

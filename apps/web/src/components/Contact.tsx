@@ -15,8 +15,6 @@ type ContactProps = {
     address: string;
     hoursLabel: string;
     hours: string;
-    mapTitle: string;
-    mapCta: string;
     name: string;
     email: string;
     company: string;
@@ -30,6 +28,22 @@ type ContactProps = {
 
 export function Contact({ locale, labels }: ContactProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const supportItems =
+    locale === "zh"
+      ? [
+          { title: "产品咨询", note: "请发送邮件至", email: "sales@dawnrisecamp.com" },
+          { title: "订单支持", note: "请发送邮件至", email: "sales@dawnrisecamp.com" },
+          { title: "商务合作", note: "请发送邮件至", email: "sales@dawnrisecamp.com" },
+        ]
+      : [
+          {
+            title: "Product Consultation",
+            note: "Please send email to",
+            email: "sales@dawnrisecamp.com",
+          },
+          { title: "Order Support", note: "Please send email to", email: "sales@dawnrisecamp.com" },
+          { title: "Business Inquiry", note: "Please send email to", email: "sales@dawnrisecamp.com" },
+        ];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -40,7 +54,7 @@ export function Contact({ locale, labels }: ContactProps) {
       await submitInquiry({
         name: String(form.get("name") ?? ""),
         email: String(form.get("email") ?? ""),
-        company: String(form.get("company") ?? ""),
+        company: "Website inquiry",
         message: String(form.get("message") ?? ""),
         locale,
       });
@@ -53,55 +67,30 @@ export function Contact({ locale, labels }: ContactProps) {
 
   return (
     <section className="section contact">
-      <div className="shell contact-grid">
-        <div className="contact-intro">
-          <div className="section-copy">
-            <span>{labels.eyebrow}</span>
-            <h2>{labels.title}</h2>
-            <p>{labels.body}</p>
-          </div>
-
-          <div className="contact-details">
-            <div>
-              <span>{labels.emailLabel}</span>
-              <a href="mailto:sales@dawnrisecamp.com">sales@dawnrisecamp.com</a>
-            </div>
-            <div>
-              <span>{labels.phoneLabel}</span>
-              <a href={`tel:${labels.phone.replace(/\s+/g, "")}`}>{labels.phone}</a>
-            </div>
-            <div>
-              <span>{labels.addressLabel}</span>
-              <p>{labels.address}</p>
-            </div>
-            <div>
-              <span>{labels.hoursLabel}</span>
-              <p>{labels.hours}</p>
-            </div>
+      <div className="shell contact-shell">
+        <div className="contact-lead">
+          <h2>{labels.title}</h2>
+          <p>{labels.body}</p>
+          <div className="contact-meta">
+            <a href={`tel:${labels.phone.replace(/\s+/g, "")}`}>{labels.phone}</a>
+            <span>{labels.hours}</span>
           </div>
         </div>
 
-        <div className="contact-map-card">
-          <div className="contact-map-heading">
-            <h3>{labels.mapTitle}</h3>
-            <a
-              href="https://www.openstreetmap.org/?mlat=30.2741&mlon=120.1551#map=13/30.2741/120.1551"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {labels.mapCta}
-            </a>
-          </div>
-          <iframe
-            title={labels.mapTitle}
-            src="https://www.openstreetmap.org/export/embed.html?bbox=120.0330%2C30.2040%2C120.2770%2C30.3440&layer=mapnik&marker=30.2741%2C120.1551"
-            loading="lazy"
-          />
+        <div className="contact-support-grid">
+          {supportItems.map((item) => (
+            <div key={item.title}>
+              <h3>{item.title}</h3>
+              <span>{item.note}</span>
+              <a href={`mailto:${item.email}`}>{item.email}</a>
+            </div>
+          ))}
         </div>
       </div>
 
       <div className="shell contact-form-shell">
         <form className="contact-form" onSubmit={handleSubmit}>
+          <h3>{locale === "zh" ? "留言给我们" : "Leave a Message"}</h3>
           <label>
             {labels.name}
             <input name="name" required />
@@ -109,10 +98,6 @@ export function Contact({ locale, labels }: ContactProps) {
           <label>
             {labels.email}
             <input name="email" type="email" required />
-          </label>
-          <label>
-            {labels.company}
-            <input name="company" required />
           </label>
           <label>
             {labels.message}

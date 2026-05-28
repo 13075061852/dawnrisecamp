@@ -1,5 +1,7 @@
 import { ArrowIcon } from "../icons";
+import { buildImageUrl } from "../lib/api";
 import { Link } from "react-router-dom";
+import type { CSSProperties } from "react";
 
 type HeroProps = {
   title: string;
@@ -10,8 +12,12 @@ type HeroProps = {
 };
 
 export function Hero({ title, body, primaryCta, secondaryCta, points }: HeroProps) {
+  const heroStyle = {
+    "--hero-image": `url("${buildImageUrl("/images/hero.webp")}")`,
+  } as CSSProperties;
+
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" style={heroStyle}>
       <div className="hero-overlay" />
       <div className="shell hero-content">
         <h1>{title}</h1>

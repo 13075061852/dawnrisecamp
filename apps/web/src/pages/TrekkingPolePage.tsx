@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowIcon } from "../icons";
+import { buildImageUrl } from "../lib/api";
 
 type TrekkingPolePageProps = {
   product: {
@@ -53,7 +54,7 @@ export function TrekkingPolePage({ product }: TrekkingPolePageProps) {
           </div>
 
           <figure className="product-lifestyle">
-            <img src="/images/products/trekking-poles-lifestyle.webp" alt="" />
+            <img src={buildImageUrl("/images/products/trekking-poles-lifestyle.webp")} alt="" />
           </figure>
         </div>
       </section>
@@ -61,7 +62,7 @@ export function TrekkingPolePage({ product }: TrekkingPolePageProps) {
       <section className="section product-story">
         <div className="shell product-story-grid">
           <figure className="product-spec-sheet">
-            <img src="/images/products/trekking-poles-spec.webp" alt="" />
+            <img src={buildImageUrl("/images/products/trekking-poles-spec.webp")} alt="" />
           </figure>
 
           <div className="product-story-copy" id="product-specs">

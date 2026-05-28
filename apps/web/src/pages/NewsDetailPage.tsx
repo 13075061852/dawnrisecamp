@@ -1,4 +1,5 @@
 import { Navigate, Link } from "react-router-dom";
+import { buildImageUrl } from "../lib/api";
 import type { Locale, NewsItem } from "../types";
 
 type NewsDetailPageProps = {
@@ -37,7 +38,7 @@ export function NewsDetailPage({ locale, news, slug, backLabel }: NewsDetailPage
         </header>
 
         <figure className="news-detail-image">
-          <img src={article.imageUrl} alt="" />
+          <img src={buildImageUrl(article.imageUrl)} alt="" />
         </figure>
 
         <div className="news-detail-body">

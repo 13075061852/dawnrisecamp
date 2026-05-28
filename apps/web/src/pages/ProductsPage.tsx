@@ -14,14 +14,32 @@ type ProductsPageProps = {
     genericPrimaryCta: string;
     genericBackCta: string;
   };
+  newsletter: {
+    title: string;
+    body: string;
+    emailLabel: string;
+    placeholder: string;
+    submit: string;
+    success: string;
+  };
   products: ProductNode[];
   productProfiles: Record<string, ProductProfile>;
 };
 
-export function ProductsPage({ productsCopy, products, productProfiles }: ProductsPageProps) {
+export function ProductsPage({
+  productsCopy,
+  newsletter,
+  products,
+  productProfiles,
+}: ProductsPageProps) {
   return (
-    <main className="page-shell">
-      <Products {...productsCopy} products={products} productProfiles={productProfiles} />
+    <main className="page-shell products-page">
+      <Products
+        {...productsCopy}
+        newsletter={newsletter}
+        products={products}
+        productProfiles={productProfiles}
+      />
     </main>
   );
 }

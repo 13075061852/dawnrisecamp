@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { fallbackNews, fallbackProducts } from "../content";
+import { fallbackNews } from "../content";
 import { fetchBootstrap } from "../lib/api";
+import { fallbackProducts } from "../productCatalog";
 import type { Locale, NewsItem, ProductNode } from "../types";
 
 export function useSiteData(locale: Locale) {
@@ -33,4 +34,3 @@ export function useSiteData(locale: Locale) {
 
   return { products, news, usingFallback };
 }
-

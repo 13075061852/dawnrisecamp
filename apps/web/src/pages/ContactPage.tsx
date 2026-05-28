@@ -14,8 +14,6 @@ type ContactPageProps = {
     address: string;
     hoursLabel: string;
     hours: string;
-    mapTitle: string;
-    mapCta: string;
     name: string;
     email: string;
     company: string;

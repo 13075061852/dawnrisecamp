@@ -1,7 +1,7 @@
 import type { BootstrapPayload, InquiryPayload, Locale } from "../types";
 
 const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim();
-const defaultBaseUrl = import.meta.env.DEV ? "http://127.0.0.1:8787" : "";
+const defaultBaseUrl = "https://dawnrisecamp-api.1308715689.workers.dev";
 export const apiBaseUrl = (configuredBaseUrl || defaultBaseUrl).replace(/\/$/, "");
 
 export async function fetchBootstrap(locale: Locale): Promise<BootstrapPayload> {
@@ -29,5 +29,27 @@ export async function submitInquiry(payload: InquiryPayload): Promise<void> {
 }
 
 export function buildMediaUrl(key: string): string {
-  return `${apiBaseUrl}/media/${key}`;
+  const normalizedKey = key.replace(/^\/+/, "");
+  return `${apiBaseUrl}/media/${normalizedKey}`;
+}
+
+export function buildImageUrl(path: string): string {
+  if (/^(?:https?:)?\/\//.test(path) || path.startsWith("data:")) {
+    return path;
+  }
+
+  if (path.startsWith("/images/")) {
+    return encodeURI(path);
+  }
+
+  if (path.startsWith("/media/")) {
+    return `${apiBaseUrl}${path}`;
+  }
+
+  const normalizedPath = path.replace(/^\/+/, "");
+  const key = normalizedPath.startsWith("images/")
+    ? normalizedPath
+    : `images/${normalizedPath}`;
+
+  return buildMediaUrl(key);
 }

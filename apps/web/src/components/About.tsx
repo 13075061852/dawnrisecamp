@@ -1,4 +1,5 @@
 import { CompassIcon, GlobeIcon, PlayIcon, ShieldIcon } from "../icons";
+import { buildImageUrl } from "../lib/api";
 
 type AboutProps = {
   eyebrow: string;
@@ -6,24 +7,38 @@ type AboutProps = {
   body: string;
   cta: string;
   features: string[];
-  stats: {
-    value: string;
-    label: string;
-  }[];
-  pillarsTitle: string;
-  pillars: {
-    title: string;
-    body: string;
-  }[];
-  processTitle: string;
-  process: {
-    title: string;
-    body: string;
-  }[];
-  galleryTitle: string;
-  gallery: {
+  supplierTitle: string;
+  supplierBody: string;
+  supplierChannels: {
+    name: string;
     imageUrl: string;
-    alt: string;
+  }[];
+  qualificationsEyebrow: string;
+  qualificationsTitle: string;
+  qualificationsBody: string;
+  qualifications: {
+    title: string;
+    body: string;
+    imageUrl: string;
+    imageAlt: string;
+    badge: string;
+    updatedLabel: string;
+    availability: string;
+  }[];
+  qualificationsPanel: {
+    title: string;
+    body: string;
+    items: string[];
+  };
+  reportsEyebrow: string;
+  reportsTitle: string;
+  reportsBody: string;
+  reports: {
+    title: string;
+    body: string;
+    label: string;
+    imageUrl: string;
+    imageAlt: string;
   }[];
   onPlay: () => void;
 };
@@ -36,103 +51,133 @@ export function About({
   body,
   cta,
   features,
-  stats,
-  pillarsTitle,
-  pillars,
-  processTitle,
-  process,
-  galleryTitle,
-  gallery,
+  supplierTitle,
+  supplierBody,
+  supplierChannels,
+  qualificationsTitle,
+  qualificationsBody,
+  qualifications,
+  qualificationsPanel,
+  reportsTitle,
+  reportsBody,
+  reports,
   onPlay,
 }: AboutProps) {
   return (
     <section className="section about">
-      <div className="shell about-grid">
-        <button type="button" className="video-card" onClick={onPlay}>
-          <img src="/images/about-poster.webp" alt="" />
-          <span className="play-button" aria-hidden="true">
-            <PlayIcon />
-          </span>
-        </button>
-
-        <div className="section-copy">
-          <span>{eyebrow}</span>
-          <h2>{title}</h2>
-          <p>{body}</p>
-          <button type="button" className="button button-primary watch-button" onClick={onPlay}>
-            <PlayIcon />
-            {cta}
+      <div className="shell about-hero">
+        <div className="about-grid">
+          <button type="button" className="video-card" onClick={onPlay}>
+            <img src={buildImageUrl("/images/about-poster.webp")} alt="" />
+            <span className="play-button" aria-hidden="true">
+              <PlayIcon />
+            </span>
           </button>
 
-          <div className="feature-row">
-            {features.map((feature, index) => {
-              const Icon = featureIcons[index];
-              return (
-                <div className="feature" key={feature}>
-                  <Icon />
-                  <span>{feature}</span>
-                </div>
-              );
-            })}
+          <div className="section-copy">
+            <span>{eyebrow}</span>
+            <h2>{title}</h2>
+            <p>{body}</p>
+            <button type="button" className="button button-primary watch-button" onClick={onPlay}>
+              <PlayIcon />
+              {cta}
+            </button>
+
+            <div className="feature-row">
+              {features.map((feature, index) => {
+                const Icon = featureIcons[index];
+                return (
+                  <div className="feature" key={feature}>
+                    <Icon />
+                    <span>{feature}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="shell about-stats">
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <strong>{stat.value}</strong>
-            <span>{stat.label}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="shell about-gallery">
-        <div className="section-copy">
-          <h2>{galleryTitle}</h2>
+      <div className="shell about-supplier-section">
+        <div className="about-section-heading about-section-heading-centered">
+          <h2>{supplierTitle}</h2>
+          <p>{supplierBody}</p>
         </div>
 
-        <div className="about-gallery-grid">
-          {gallery.map((item) => (
-            <figure key={item.imageUrl}>
-              <img src={item.imageUrl} alt={item.alt} />
-            </figure>
+        <div className="supplier-channel-grid">
+          {supplierChannels.map((channel) => (
+            <article className="supplier-channel-card" key={channel.name}>
+              <img src={channel.imageUrl} alt={`${channel.name} logo`} />
+              <span>{channel.name}</span>
+            </article>
           ))}
         </div>
       </div>
 
-      <div className="shell about-story-grid">
-        <section className="about-panel">
-          <div className="section-copy">
-            <h2>{pillarsTitle}</h2>
+      <div className="shell about-document-section">
+        <section className="about-document-block">
+          <div className="about-section-heading about-section-heading-centered">
+            <h2>{qualificationsTitle}</h2>
+            <p>{qualificationsBody}</p>
           </div>
 
-          <div className="about-pillar-list">
-            {pillars.map((pillar) => (
-              <article key={pillar.title}>
-                <h3>{pillar.title}</h3>
-                <p>{pillar.body}</p>
-              </article>
-            ))}
+          <div className="qualification-module">
+            <div className="qualification-card-grid">
+              {qualifications.map((item) => (
+                <article key={item.title} className="qualification-card">
+                  <figure>
+                    <img src={item.imageUrl} alt={item.imageAlt} />
+                  </figure>
+                  <div className="qualification-card-copy">
+                    <div>
+                      <h3>{item.title}</h3>
+                      <span>{item.badge}</span>
+                    </div>
+                    <p>{item.body}</p>
+                    <dl>
+                      <div>
+                        <dt>{item.updatedLabel}</dt>
+                        <dd>{item.availability}</dd>
+                      </div>
+                    </dl>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <aside className="qualification-panel">
+              <strong>{qualificationsPanel.title}</strong>
+              <p>{qualificationsPanel.body}</p>
+              <ul>
+                {qualificationsPanel.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </section>
 
-        <section className="about-panel about-process-panel">
-          <div className="section-copy">
-            <h2>{processTitle}</h2>
+        <section className="about-document-block">
+          <div className="about-section-heading about-section-heading-centered">
+            <h2>{reportsTitle}</h2>
+            <p>{reportsBody}</p>
           </div>
 
-          <ol className="about-process-list">
-            {process.map((step, index) => (
-              <li key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+          <div className="report-module">
+            {reports.map((report) => (
+              <article key={report.title} className="about-report-card">
+                <figure className="report-card-visual">
+                  <img src={report.imageUrl} alt={report.imageAlt} />
+                  <span>{report.label}</span>
+                </figure>
                 <div>
-                  <h3>{step.title}</h3>
-                  <p>{step.body}</p>
+                  <strong>{report.label}</strong>
+                  <h3>{report.title}</h3>
+                  <p>{report.body}</p>
                 </div>
-              </li>
+              </article>
             ))}
-          </ol>
+          </div>
         </section>
       </div>
     </section>

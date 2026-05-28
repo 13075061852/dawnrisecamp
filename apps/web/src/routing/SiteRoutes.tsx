@@ -45,6 +45,29 @@ type SiteCopy = {
       caption: string;
     }[];
   };
+  qualityService: {
+    title: string;
+    body: string;
+    cta: string;
+    assurances: {
+      title: string;
+      body: string;
+      imageUrl: string;
+      alt: string;
+    }[];
+    responseSteps: {
+      title: string;
+      body: string;
+    }[];
+  };
+  newsletter: {
+    title: string;
+    body: string;
+    emailLabel: string;
+    placeholder: string;
+    submit: string;
+    success: string;
+  };
   trekkingPole: {
     eyebrow: string;
     title: string;
@@ -68,24 +91,38 @@ type SiteCopy = {
     cta: string;
     videoError: string;
     features: string[];
-    stats: {
-      value: string;
-      label: string;
-    }[];
-    pillarsTitle: string;
-    pillars: {
-      title: string;
-      body: string;
-    }[];
-    processTitle: string;
-    process: {
-      title: string;
-      body: string;
-    }[];
-    galleryTitle: string;
-    gallery: {
+    supplierTitle: string;
+    supplierBody: string;
+    supplierChannels: {
+      name: string;
       imageUrl: string;
-      alt: string;
+    }[];
+    qualificationsEyebrow: string;
+    qualificationsTitle: string;
+    qualificationsBody: string;
+    qualifications: {
+      title: string;
+      body: string;
+      imageUrl: string;
+      imageAlt: string;
+      badge: string;
+      updatedLabel: string;
+      availability: string;
+    }[];
+    qualificationsPanel: {
+      title: string;
+      body: string;
+      items: string[];
+    };
+    reportsEyebrow: string;
+    reportsTitle: string;
+    reportsBody: string;
+    reports: {
+      title: string;
+      body: string;
+      label: string;
+      imageUrl: string;
+      imageAlt: string;
     }[];
   };
   products: {
@@ -117,8 +154,6 @@ type SiteCopy = {
     address: string;
     hoursLabel: string;
     hours: string;
-    mapTitle: string;
-    mapCta: string;
     name: string;
     email: string;
     company: string;
@@ -159,15 +194,27 @@ export function SiteRoutes({
               hero={copy.hero}
               featuredProducts={copy.featuredProducts}
               homeSourcing={copy.homeSourcing}
+              qualityService={copy.qualityService}
+              newsletter={copy.newsletter}
             />
           }
         />
-        <Route path="/about" element={<AboutPage about={copy.about} onPlayVideo={onPlayVideo} />} />
+        <Route
+          path="/about"
+          element={
+            <AboutPage
+              about={copy.about}
+              newsletter={copy.newsletter}
+              onPlayVideo={onPlayVideo}
+            />
+          }
+        />
         <Route
           path="/products"
           element={
             <ProductsPage
               productsCopy={copy.products}
+              newsletter={copy.newsletter}
               products={products}
               productProfiles={productProfiles}
             />

@@ -1,0 +1,56 @@
+﻿1、导航栏
+
+在产品后面加Quality Assurance。将NEWS改为Industry Insights。
+
+导航栏加大，上面的字体加粗。
+
+2、About Us里面分三个板块
+ 
+①Company Introduction公司介绍
+介绍 DawnRiseCamp 是什么品牌，主营哪些户外产品，有海外供货经验。写：
+
+DawnRiseCamp is a professional outdoor products brand dedicated to reliable camping, hiking, and adventure gear for global customers.
+With years of overseas supply experience, strict quality control, and secondary inspection before shipment, we provide dependable outdoor products and flexible OEM/ODM solutions for wholesalers, distributors, retailers, and e-commerce sellers worldwide.
+
+②Brand Mission & Service Philosophy品牌目标和服务理念
+介绍品牌理念、服务态度和长期合作目标。写：
+Our mission is to provide practical, durable, and reliable outdoor products for global customers. We focus on real outdoor use, stable quality, responsive service, and long-term cooperation with our business partners.
+
+③OEM / ODM Service定制服务介绍支持 logo、包装、颜色、尺寸、材料、产品组合等定制。写：
+
+We support OEM and ODM services, including logo customization, packaging design, color options, material selection, size adjustment, and product combination solutions. Whether you are a wholesaler, distributor, retailer, or e-commerce seller, we can help you build customized outdoor product solutions for your market.
+
+3、Quality Assurance板块
+
+开头口号：
+Strictly Checked. Ready for Adventure.
+副标题：
+Every product is inspected again after production and approved for shipment only when it meets DawnRiseCamp brand standards.
+
+下面分三个模块：
+
+Quality Control Process流程图做成图标式，下面5个步骤
+
+Secondary Inspection Reports
+放检测报告
+Company Qualifications
+放公司资质证书
+
+4、点开这个以后显示全部的产品，要不然现在显示的产品数量有点少，二级类目作为一个精确筛选项，点开一级类目是全部的产品，点开二级类目作为筛选，不要点开一级类目，自动就是进入第一个二级类目
+
+
+
+
+5、 home首页介绍
+
+颜色加深，并改为
+We provide quality-checked camping and outdoor gear with flexible OEM/ODM solutions, strict quality control, and reliable supply support for global camping brands, wholesalers, and retailers.
+
+6、 Industry Insights。
+这个板块里面放几篇户外产品的文章，最好把文章日期不管是图片也好，还是别的从2022年开始，每年两篇
+
+7、产品页打开图片太大了，弄两张缩小的图片，
+
+
+可以点开后上面是二级类目名称，然后点哪个图片，哪个图片在左侧放大，右侧这种缩小的框根据我们的白图有几张放几个。下面是示意
+、

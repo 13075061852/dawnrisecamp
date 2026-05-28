@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { buildMediaUrl } from "../lib/api";
+import { buildImageUrl, buildMediaUrl } from "../lib/api";
 
 type VideoModalProps = {
   open: boolean;
@@ -33,11 +33,16 @@ export function VideoModal({ open, onClose, errorMessage }: VideoModalProps) {
       </button>
       {hasError ? (
         <div className="video-fallback">
-          <img src="/images/about-poster.webp" alt="" />
+          <img src={buildImageUrl("/images/about-poster.webp")} alt="" />
           <p>{errorMessage}</p>
         </div>
       ) : (
-        <video controls autoPlay poster="/images/about-poster.webp" onError={() => setHasError(true)}>
+        <video
+          controls
+          autoPlay
+          poster={buildImageUrl("/images/about-poster.webp")}
+          onError={() => setHasError(true)}
+        >
           <source src={buildMediaUrl("about-video.mp4")} type="video/mp4" />
         </video>
       )}

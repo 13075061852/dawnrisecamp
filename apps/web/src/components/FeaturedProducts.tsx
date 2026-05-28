@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowIcon } from "../icons";
+import { buildImageUrl } from "../lib/api";
 
 type FeaturedProduct = {
   name: string;
@@ -39,10 +40,9 @@ export function FeaturedProducts({
           {items.map((item) => (
             <Link className="featured-product-tile" key={item.name} to={item.href}>
               <figure>
-                <img src={item.imageUrl} alt="" />
+                <img src={buildImageUrl(item.imageUrl)} alt="" />
               </figure>
               <div>
-                <strong>{item.highlight}</strong>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
               </div>
