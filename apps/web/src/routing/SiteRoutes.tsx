@@ -8,6 +8,7 @@ import { ProductDetailPage } from "../pages/ProductDetailPage";
 import { ProductsPage } from "../pages/ProductsPage";
 import { QualityAssurancePage } from "../pages/QualityAssurancePage";
 import { TrekkingPolePage } from "../pages/TrekkingPolePage";
+import { AdminLoginPage } from "../pages/AdminLoginPage";
 import type { Locale, NewsItem, ProductNode, ProductProfile } from "../types";
 
 type SiteCopy = {
@@ -92,12 +93,6 @@ type SiteCopy = {
       imageUrl: string;
       imageAlt: string;
     }[];
-    supplierTitle: string;
-    supplierBody: string;
-    supplierChannels: {
-      name: string;
-      imageUrl: string;
-    }[];
   };
   quality: {
     eyebrow: string;
@@ -154,6 +149,11 @@ type SiteCopy = {
     address: string;
     hoursLabel: string;
     hours: string;
+    supportItems?: {
+      title: string;
+      note: string;
+      email: string;
+    }[];
     name: string;
     email: string;
     company: string;
@@ -243,6 +243,7 @@ export function SiteRoutes({
           }
         />
         <Route path="/contact" element={<ContactPage locale={locale} contact={copy.contact} />} />
+        <Route path="/login" element={<AdminLoginPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>

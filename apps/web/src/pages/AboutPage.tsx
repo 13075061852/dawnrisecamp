@@ -9,12 +9,6 @@ type AboutPageProps = {
       imageUrl: string;
       imageAlt: string;
     }[];
-    supplierTitle: string;
-    supplierBody: string;
-    supplierChannels: {
-      name: string;
-      imageUrl: string;
-    }[];
   };
   newsletter: {
     title: string;

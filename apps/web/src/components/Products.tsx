@@ -267,18 +267,7 @@ function filterProducts(products: ProductNode[], normalizedQuery: string): Produ
 }
 
 function formatTaxonomyName(name: string) {
-  const ampersandIndex = name.indexOf(" & ");
-
-  if (ampersandIndex === -1) {
-    return name;
-  }
-
-  return (
-    <>
-      <span>{name.slice(0, ampersandIndex + 2)}</span>
-      <span>{name.slice(ampersandIndex + 3)}</span>
-    </>
-  );
+  return name;
 }
 
 function getCatalogImage(product: ProductNode, profile?: ProductProfile) {

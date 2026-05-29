@@ -35,7 +35,9 @@ export type NewsItem = {
 
 export type BootstrapPayload = {
   products: ProductNode[];
+  productProfiles?: Record<string, ProductProfile>;
   news: NewsItem[];
+  siteContent?: Partial<Record<"home" | "about" | "products" | "quality" | "news" | "contact", unknown>>;
 };
 
 export type InquiryPayload = {

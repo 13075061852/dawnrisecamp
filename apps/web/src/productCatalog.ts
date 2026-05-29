@@ -4,7 +4,7 @@ import type { Locale, ProductNode, ProductProfile } from "./types";
 const tentsTree: Record<Locale, ProductNode> = {
   en: {
     slug: "tents-shelter-systems",
-    name: "Tents & Shelter Systems",
+    name: "Tents & Shelter",
     children: [
       {
         slug: "camping-tents",

@@ -9,12 +9,6 @@ type AboutProps = {
     imageUrl: string;
     imageAlt: string;
   }[];
-  supplierTitle: string;
-  supplierBody: string;
-  supplierChannels: {
-    name: string;
-    imageUrl: string;
-  }[];
 };
 
 const missionItems = [
@@ -40,33 +34,12 @@ const missionItems = [
   },
 ];
 
-export function About({
-  introSections,
-  supplierTitle,
-  supplierBody,
-  supplierChannels,
-}: AboutProps) {
+export function About({ introSections }: AboutProps) {
   return (
     <section className="section about">
       <figure className="about-hero-banner">
         <img src={buildImageUrl("/images/about-hero.webp")} alt="Outdoor gear sourcing review at camp" />
       </figure>
-
-      <div className="shell about-supplier-section">
-        <div className="about-section-heading about-section-heading-centered">
-          <h2>{supplierTitle}</h2>
-          <p>{supplierBody}</p>
-        </div>
-
-        <div className="supplier-channel-grid">
-          {supplierChannels.map((channel) => (
-            <article className="supplier-channel-card" key={channel.name}>
-              <img src={channel.imageUrl} alt={`${channel.name} logo`} />
-              <span>{channel.name}</span>
-            </article>
-          ))}
-        </div>
-      </div>
 
       <div className="shell about-intro-section">
         {introSections.map((section, index) => (

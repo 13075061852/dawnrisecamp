@@ -15,6 +15,11 @@ type ContactProps = {
     address: string;
     hoursLabel: string;
     hours: string;
+    supportItems?: {
+      title: string;
+      note: string;
+      email: string;
+    }[];
     name: string;
     email: string;
     company: string;
@@ -28,7 +33,7 @@ type ContactProps = {
 
 export function Contact({ locale, labels }: ContactProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const supportItems =
+  const supportItems = labels.supportItems?.length ? labels.supportItems :
     locale === "zh"
       ? [
           { title: "产品咨询", note: "请发送邮件至", email: "sales@dawnrisecamp.com" },
@@ -47,7 +52,8 @@ export function Contact({ locale, labels }: ContactProps) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     setStatus("submitting");
 
     try {
@@ -58,7 +64,7 @@ export function Contact({ locale, labels }: ContactProps) {
         message: String(form.get("message") ?? ""),
         locale,
       });
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus("success");
     } catch {
       setStatus("error");

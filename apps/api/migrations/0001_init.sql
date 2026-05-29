@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS inquiries (
   company TEXT NOT NULL,
   message TEXT NOT NULL,
   locale TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT '待处理',
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -68,4 +69,3 @@ INSERT OR IGNORE INTO news (
     '拖车生产线已完成升级，可更稳定地支持大货订单与更短交期。',
     '/images/news-wagons.webp'
   );
-

@@ -38,6 +38,7 @@ export function ProductDetailPage({
 
   const pageCopy = getProductDetailCopy(labels.genericBackCta);
   const primarySpecs = profile.specs.slice(0, 3);
+  const overviewImage = galleryImages[2] ?? galleryImages[0] ?? "";
 
   return (
     <main className="page-shell product-detail-page generic-product-page product-detail-page-redesign">
@@ -115,20 +116,9 @@ export function ProductDetailPage({
             </dl>
           </aside>
 
-          <article className="product-detail-story">
-            <span>{pageCopy.detailLabel}</span>
-            <h2>{profile.featureTitle}</h2>
-            <p>{profile.featureBody}</p>
-
-            <div className="product-detail-note-grid">
-              {pageCopy.notes.map((note) => (
-                <div className="product-detail-note" key={note.title}>
-                  <strong>{note.title}</strong>
-                  <p>{note.body}</p>
-                </div>
-              ))}
-            </div>
-          </article>
+          <figure className="product-detail-overview-image">
+            <img src={buildImageUrl(overviewImage)} alt="" />
+          </figure>
         </div>
       </section>
 
