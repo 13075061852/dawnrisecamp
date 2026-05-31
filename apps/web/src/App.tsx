@@ -36,7 +36,7 @@ export default function App() {
   }
 
   return (
-    <div className="app-shell">
+    <div className="app-shell site-app-shell">
       <ScrollToTop />
       <Header locale={locale} onLocaleChange={setLocale} labels={t.nav} />
       <div className="floating-actions">

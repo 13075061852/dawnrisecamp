@@ -29,6 +29,10 @@ const sidebarCollapsedStorageKey = "dawnrisecamp-admin-sidebar-collapsed";
 const activeSectionStorageKey = "dawnrisecamp-admin-active-section";
 const activeModuleStorageKey = "dawnrisecamp-admin-active-module";
 
+function getStoredAdminToken() {
+  return localStorage.getItem(tokenStorageKey) ?? sessionStorage.getItem(tokenStorageKey) ?? "";
+}
+
 const sections: {
   key: AdminSectionKey;
   label: string;
@@ -66,7 +70,8 @@ function getInitialAdminModule(sectionKey: AdminSectionKey) {
 
 export function AdminLoginPage() {
   const [password, setPassword] = useState("");
-  const [token, setToken] = useState(() => localStorage.getItem(tokenStorageKey) ?? "");
+  const [rememberLogin, setRememberLogin] = useState(() => Boolean(localStorage.getItem(tokenStorageKey)));
+  const [token, setToken] = useState(() => getStoredAdminToken());
   const [activeSection, setActiveSection] = useState<AdminSectionKey>(() => getInitialAdminSection());
   const [activeModule, setActiveModule] = useState(() => getInitialAdminModule(getInitialAdminSection()));
   const [englishDrafts, setEnglishDrafts] = useState<Record<AdminSectionKey, LocaleContent>>(() => buildDefaultDrafts("en"));
@@ -97,6 +102,7 @@ export function AdminLoginPage() {
       })
       .catch(() => {
         localStorage.removeItem(tokenStorageKey);
+        sessionStorage.removeItem(tokenStorageKey);
         setToken("");
         setStatus("登录已过期，请重新登录。");
       })
@@ -162,12 +168,15 @@ export function AdminLoginPage() {
 
     try {
       const nextToken = await loginAdmin(password);
-      localStorage.setItem(tokenStorageKey, nextToken);
+      const persistentStorage = rememberLogin ? localStorage : sessionStorage;
+      const temporaryStorage = rememberLogin ? sessionStorage : localStorage;
+      persistentStorage.setItem(tokenStorageKey, nextToken);
+      temporaryStorage.removeItem(tokenStorageKey);
       setToken(nextToken);
       setPassword("");
       setStatus("登录成功。");
     } catch {
-      setStatus("登录失败，请检查管理密码或 Worker 配置。");
+      setStatus("密码错误，请重新输入。");
     } finally {
       setIsBusy(false);
     }
@@ -197,22 +206,53 @@ export function AdminLoginPage() {
     return (
       <main className="admin-page admin-login-panel">
         <form className="admin-login-card" onSubmit={handleLogin}>
-          <p className="admin-kicker">Dawnrise Camp CMS</p>
-          <h1>后台登录</h1>
-          <label>
-            管理密码
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              autoComplete="current-password"
-              required
-            />
+          <div className="admin-login-heading">
+            <p className="admin-kicker">Dawnrise Camp CMS</p>
+            <h1>Welcome back</h1>
+            <span>Secure staff access</span>
+          </div>
+
+          <label className="admin-login-field">
+            <span>管理密码</span>
+            <span className="admin-login-input">
+              <AdminLoginIcon name="lock" />
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                autoComplete="current-password"
+                placeholder="请输入管理密码"
+                required
+              />
+            </span>
           </label>
-          <button className="button button-primary" type="submit" disabled={isBusy}>
+
+          <div className="admin-login-options">
+            <label className="admin-login-check">
+              <input
+                type="checkbox"
+                checked={rememberLogin}
+                onChange={(event) => setRememberLogin(event.target.checked)}
+              />
+              <span>记住登录</span>
+            </label>
+            <a href="mailto:sales@dawnrisecamp.com">联系管理员</a>
+          </div>
+
+          <button className="button button-primary admin-login-submit" type="submit" disabled={isBusy}>
+            <AdminLoginIcon name="key" />
             {isBusy ? "登录中..." : "进入后台"}
           </button>
-          {status ? <p className="admin-status">{status}</p> : null}
+
+          <div className="admin-login-secure">
+            <AdminLoginIcon name="shield" />
+            <span>Secure staff access</span>
+          </div>
+          {status ? (
+            <p className={status.includes("失败") || status.includes("过期") || status.includes("密码错误") ? "admin-status error" : "admin-status success"}>
+              {status}
+            </p>
+          ) : null}
         </form>
       </main>
     );
@@ -276,6 +316,7 @@ export function AdminLoginPage() {
               className="admin-logout"
               onClick={() => {
                 localStorage.removeItem(tokenStorageKey);
+                sessionStorage.removeItem(tokenStorageKey);
                 setToken("");
               }}
             >
@@ -1367,6 +1408,20 @@ function ImageUploadBox({
         </label>
       </div>
     </div>
+  );
+}
+
+function AdminLoginIcon({ name }: { name: "key" | "lock" | "shield" }) {
+  const paths: Record<"key" | "lock" | "shield", string[]> = {
+    key: ["M15 7a4 4 0 1 0-3.4 6.1L4 20l3-1 1-3 3-1 1.2-1.2A4 4 0 0 0 15 7Z", "M17 5l2 2"],
+    lock: ["M7 11V8a5 5 0 0 1 10 0v3", "M6 11h12v10H6V11Z", "M12 15v2"],
+    shield: ["M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z", "m9 12 2 2 4-5"],
+  };
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {paths[name].map((path) => <path d={path} key={path} />)}
+    </svg>
   );
 }
 
